@@ -86,29 +86,65 @@ def randomIndividual(queenQuantity: int, tabuleiro: int):
         resp.append(tupla)
     return resp
 
-def moveUp(queen: list, board:int):
+def moveUp(queen: list, board:int, queens:list):
     if queen[0] > 0:
-        queen[0] = queen[0] - 1
+        if [queen[0]-1,queen[1]] not in queens:
+            queen[0] = queen[0] - 1
     return queen
 
-def moveDown(queen: list, board:int):
+def moveDown(queen: list, board:int, queens:list):
     if queen[0] < board - 1:
-        queen[0] = queen[0]+1
+        if [queen[0]+1, queen[1]] not in queens:
+            queen[0] = queen[0]+1
     return queen
 
-def moveRight(queen: list, board:int):
+def moveRight(queen: list, board:int, queens:list):
     if queen[1] < board - 1:
-        queen[1] = queen[1]+1
+        if [queen[0], queen[1]+1] not in queens:
+            queen[1] = queen[1]+1
     return queen
 
-def moveLeft(queen:list, board:int):
+def moveLeft(queen:list, board:int, queens:list):
     if queen[1] > 0:
-        queen[1] = queen[1]-1
+        if [queen[0], queen[1]-1] not in queens:
+            queen[1] = queen[1]-1
+    return queen
+
+def moveUpRight(queen: list, board:int, queens:list):
+    if [queen[0]-1, queen[1]+1] not in queens:
+        if queen[0] > 0:
+            queen[0] = queen[0] - 1
+        if queen[1] < board - 1:
+            queen[1] = queen[1] + 1
+    return queen
+
+def moveUpLeft(queen: list, board:int, queens:list):
+    if [queen[0] - 1, queen[1] - 1] not in queens:
+        if queen[0] > 0:
+            queen[0] = queen[0] - 1
+        if queen[1] > 0:
+            queen[1] = queen[1] - 1
+    return queen
+
+def moveDownRight(queen: list, board:int, queens:list):
+    if [queen[0] + 1, queen[1] + 1] not in queens:
+        if queen[0] < board - 1:
+            queen[0] = queen[0]+1
+        if queen[1] < board - 1:
+            queen[1] = queen[1] + 1
+    return queen
+
+def moveDownLeft(queen: list, board:int, queens:list):
+    if [queen[0] + 1, queen[1] - 1] not in queens:
+        if queen[0] < board - 1:
+            queen[0] = queen[0]+1
+        if queen[1] > 0:
+            queen[1] = queen[1] - 1
     return queen
 
 def localSearch(queens: list, board: int):
     listBase = []
-    listMoves = [0,1,2,3]
+    listMoves = [0,1,2,3,4,5,6,7]
     queensAux = queens.copy()
     best = deepcopy(queens)
     for i in range(len(queens)):
@@ -120,21 +156,29 @@ def localSearch(queens: list, board: int):
         shuffle(listMoves)
         for i in range(len(listMoves)):
             if listMoves[i]==0:
-                queensAux[index]=moveUp(queensAux[index],board)
+                queensAux[index]=moveUp(queensAux[index],board,queensAux)
             if listMoves[i]==1:
-                queensAux[index]=moveRight(queensAux[index],board)
+                queensAux[index]=moveRight(queensAux[index],board,queensAux)
             if listMoves[i]==2:
-                queensAux[index]=moveDown(queensAux[index],board)
+                queensAux[index]=moveDown(queensAux[index],board,queensAux)
             if listMoves[i]==3:
-                queensAux[index]=moveLeft(queensAux[index], board)
+                queensAux[index]=moveLeft(queensAux[index], board,queensAux)
+            if listMoves[i]==4:
+                queensAux[index]=moveUpRight(queensAux[index], board,queensAux)
+            if listMoves[i]==5:
+                queensAux[index]=moveUpLeft(queensAux[index], board,queensAux)
+            if listMoves[i]==6:
+                queensAux[index]=moveDownRight(queensAux[index], board,queensAux)
+            if listMoves[i]==7:
+                queensAux[index]=moveDownLeft(queensAux[index], board,queensAux)
 
-            melhorFitness = fitness(totalDaDominacao(best,board), board)
+            '''melhorFitness = fitness(totalDaDominacao(best,board), board)
             atualFitness = fitness(totalDaDominacao(queensAux, board),board)
             print("novo eh " + str(atualFitness) + " velho eh " + str(melhorFitness))
             a = atualFitness - melhorFitness
             print("a:"+str(a))
             imprimir(queensAux, board)
-            print("----------")
+            print("----------")'''
             if fitness(totalDaDominacao(queensAux, board),board) > fitness(totalDaDominacao(best,board), board):
                 best = deepcopy(queensAux)
                 lista = listBase.copy()
@@ -145,7 +189,62 @@ def localSearch(queens: list, board: int):
 
     return best
 
-rainhas=[[3,1]]
+def perturbation(queens: list, times: int, board: int):
+    for i in range(times):
+        index=randint(0,len(queens)-1)
+        randOp=randint(0,7)
+        aux = []
+        if randOp == 0:
+            aux = moveUp(queens[index], board, queens)
+            if queens[index]==aux:
+                i-=1
+            else:
+                queens[index] = aux
+        if randOp == 1:
+            aux = moveRight(queens[index], board, queens)
+            if queens[index]==aux:
+                i-=1
+            else:
+                queens[index] = aux
+        if randOp == 2:
+            aux = moveDown(queens[index], board, queens)
+            if queens[index]==aux:
+                i-=1
+            else:
+                queens[index] = aux
+        if randOp == 3:
+            aux = moveLeft(queens[index], board, queens)
+            if queens[index]==aux:
+                i-=1
+            else:
+                queens[index] = aux
+        if randOp == 4:
+            aux = moveUpRight(queens[index], board, queens)
+            if queens[index]==aux:
+                i-=1
+            else:
+                queens[index] = aux
+        if randOp == 5:
+            aux = moveUpLeft(queens[index], board, queens)
+            if queens[index]==aux:
+                i-=1
+            else:
+                queens[index] = aux
+        if randOp == 6:
+            aux = moveDownRight(queens[index], board, queens)
+            if queens[index]==aux:
+                i-=1
+            else:
+                queens[index] = aux
+        if randOp == 7:
+            aux = moveDownLeft(queens[index], board, queens)
+            if queens[index]==aux:
+                i-=1
+            else:
+                queens[index] = aux
+    return queens
+
+'''rainhas=[[3,1]]
 imprimir(rainhas,8)
 print("\nfitness: "+str(fitness(totalDaDominacao(rainhas, 8),8))+"\n")
 rainhas=[[3,1],[2,3]]
@@ -153,11 +252,11 @@ imprimir(rainhas,8)
 print("\n"+str(fitness(totalDaDominacao(rainhas, 8),8))+"\n")
 rainhas=[[0,2],[1,1],[6,0],[7,3],[3,6]]
 imprimir(rainhas,8)
-print("\nfitness: "+str(fitness(totalDaDominacao(rainhas, 8),8))+"\n")
+print("\nfitness: "+str(fitness(totalDaDominacao(rainhas, 8),8))+"\n")'''
 rainhas=[[1,1],[1,2],[1,3]]
 imprimir(rainhas,8)
 print("Meu fitness eh " + str(fitness(totalDaDominacao(rainhas, 8), 8)))
 rainhas = localSearch(rainhas, 8)
 print(rainhas)
-
 imprimir(rainhas,8)
+print("Meu fitness eh " + str(fitness(totalDaDominacao(rainhas, 8), 8)))
