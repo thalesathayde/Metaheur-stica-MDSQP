@@ -1,6 +1,7 @@
 from random import randint
 from random import uniform
 from operator import itemgetter
+import time
 
 def keyToSortQueens(e):
     return str(e[0])+str(e[1])
@@ -264,9 +265,11 @@ print(a)
 print(BinaryStringToQueensArray(a,tamanho))
 print(randint(0, tamanho-1))'''
 
+start = time.time()
+
 individualQuantity = 100
 queensQuantity = 5
-tabuleiro = 9
+tabuleiro = 8
 mutationChance = 0.05
 mutationQuantity= 2 #quantos bits mudam por ver
 procriatorQuantity=int(individualQuantity/2)
@@ -297,3 +300,4 @@ for j in range(individualQuantity):
 
 imprimir(population[0][1],tabuleiro)
 print(population[0])
+print("tempo:"+str(time.time()-start)+"s")

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e583042-8f1b-469e-a76f-a40fe4c41af5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ILS.py" afterPath="$PROJECT_DIR$/ILS.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/genetico.py" afterPath="$PROJECT_DIR$/genetico.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +29,8 @@
       <file leaf-file-name="genetico.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/genetico.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="267" column="18" lean-forward="false" selection-start-line="267" selection-start-column="18" selection-end-line="267" selection-end-column="18" />
+            <state relative-caret-position="286">
+              <caret line="300" column="29" lean-forward="false" selection-start-line="300" selection-start-column="29" selection-end-line="300" selection-end-column="29" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -39,8 +41,8 @@
       <file leaf-file-name="ILS.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ILS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="274" column="22" lean-forward="false" selection-start-line="274" selection-start-column="22" selection-end-line="274" selection-end-column="22" />
+            <state relative-caret-position="269">
+              <caret line="294" column="20" lean-forward="false" selection-start-line="294" selection-start-column="20" selection-end-line="294" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -84,8 +86,8 @@
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_4.py" />
         <option value="$PROJECT_DIR$/base.py" />
-        <option value="$PROJECT_DIR$/genetico.py" />
         <option value="$PROJECT_DIR$/ILS.py" />
+        <option value="$PROJECT_DIR$/genetico.py" />
       </list>
     </option>
   </component>
@@ -144,7 +146,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ILS">
+  <component name="RunManager" selected="Python.genetico">
     <configuration default="false" name="scratch_4" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -289,8 +291,8 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.ILS" />
-        <item index="1" class="java.lang.String" itemvalue="Python.genetico" />
+        <item index="0" class="java.lang.String" itemvalue="Python.genetico" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ILS" />
         <item index="2" class="java.lang.String" itemvalue="Python.scratch_4" />
         <item index="3" class="java.lang.String" itemvalue="Python.base" />
       </list>
@@ -369,8 +371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/genetico.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="267" column="18" lean-forward="false" selection-start-line="267" selection-start-column="18" selection-end-line="267" selection-end-column="18" />
+        <state relative-caret-position="286">
+          <caret line="300" column="29" lean-forward="false" selection-start-line="300" selection-start-column="29" selection-end-line="300" selection-end-column="29" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -379,8 +381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ILS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="274" column="22" lean-forward="false" selection-start-line="274" selection-start-column="22" selection-end-line="274" selection-end-column="22" />
+        <state relative-caret-position="269">
+          <caret line="294" column="20" lean-forward="false" selection-start-line="294" selection-start-column="20" selection-end-line="294" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

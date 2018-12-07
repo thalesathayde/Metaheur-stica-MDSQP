@@ -2,6 +2,7 @@ from random import randint
 from random import uniform
 from random import shuffle
 from copy import deepcopy
+import time
 
 def fitness(dominio: list, tabuleiro: int):
     c=len(dominio)/tabuleiro**2
@@ -270,15 +271,18 @@ print(rainhas)
 imprimir(rainhas,8)
 print("Meu fitness eh " + str(fitness(totalDaDominacao(rainhas, 8), 8)))'''
 
+start=time.time()
+
 tabuleiro = 8
 quantidadeDeRainhas = 5
-perturbationTimes = 10
+perturbationTimes = 10 #5~10
 maxIterations = 1000
 
 rainhas=randomIndividual(quantidadeDeRainhas,tabuleiro)
+#print("Meu fitness inicial eh " + str(fitness(totalDaDominacao(rainhas, tabuleiro), tabuleiro)))
 rainhas=localSearch(rainhas,tabuleiro)
 best = deepcopy(rainhas)
-count=0
+count=1
 for i in range(maxIterations):
     if fitness(totalDaDominacao(best,tabuleiro),tabuleiro) == 1:
         break
@@ -288,6 +292,7 @@ for i in range(maxIterations):
     if fitness(totalDaDominacao(rainhas,tabuleiro),tabuleiro)>fitness(totalDaDominacao(rainhas,tabuleiro),tabuleiro):
         best = deepcopy(rainhas)
 
+print("iterações: "+str(count))
 imprimir(best,tabuleiro)
 print("Meu fitness eh " + str(fitness(totalDaDominacao(best, tabuleiro), tabuleiro)))
-print(count)
+print("tempo:"+str(time.time()-start)+"s")
