@@ -10,46 +10,48 @@ Reallocated glb_str_ptr (elt_size=8) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=8) to 20 items from 10.
 Reallocated singl_function (elt_size=8) to 100 items from 50.
-Warning--empty address in SimoneBeauvoir
-You've used 1 entry,
+Warning--page numbers missing in both pages and numpages fields in alharbi2017genetic
+Warning--empty address in hoos2004stochastic
+Warning--empty address in lourencco2010iterated
+You've used 4 entries,
             5732 wiz_defined-function locations,
-            1297 strings with 14540 characters,
-and the built_in function-call counts, 849 in all, are:
-= -- 71
-> -- 20
+            1317 strings with 15159 characters,
+and the built_in function-call counts, 4728 in all, are:
+= -- 616
+> -- 180
 < -- 0
-+ -- 7
-- -- 8
-* -- 48
-:= -- 103
-add.period$ -- 6
-call.type$ -- 1
-change.case$ -- 5
-chr.to.int$ -- 1
-cite$ -- 2
-duplicate$ -- 78
-empty$ -- 55
-format.name$ -- 8
-if$ -- 161
++ -- 62
+- -- 64
+* -- 338
+:= -- 501
+add.period$ -- 22
+call.type$ -- 4
+change.case$ -- 28
+chr.to.int$ -- 4
+cite$ -- 7
+duplicate$ -- 384
+empty$ -- 270
+format.name$ -- 80
+if$ -- 1119
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 48
-num.names$ -- 8
-pop$ -- 30
+missing$ -- 11
+newline$ -- 72
+num.names$ -- 32
+pop$ -- 136
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 64
 quote$ -- 0
-skip$ -- 27
+skip$ -- 137
 stack$ -- 0
-substring$ -- 55
-swap$ -- 7
+substring$ -- 334
+swap$ -- 42
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 15
-warning$ -- 1
-while$ -- 8
+type$ -- 77
+warning$ -- 3
+while$ -- 30
 width$ -- 0
-write$ -- 56
-(There was 1 warning)
+write$ -- 107
+(There were 3 warnings)

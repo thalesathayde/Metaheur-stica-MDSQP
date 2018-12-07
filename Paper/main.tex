@@ -50,7 +50,9 @@
 \email{thalesathaydesantos@id.uff.br}
 
 \begin{abstract}
-Text...
+In this paper, we propose a solution to the Dominating Queens Problem
+using Iterative Local Search and compare our results with a previous
+proposed solution using Genetic Algorithm.
 \end{abstract}
 
 %
@@ -58,70 +60,76 @@ Text...
 % http://dl.acm.org/ccs.cfm
 % Please copy and paste the code instead of the example below.
 %
-\begin{CCSXML}
-<ccs2012>
- <concept>
-  <concept_id>10010520.10010553.10010562</concept_id>
-  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
-  <concept_significance>500</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010575.10010755</concept_id>
-  <concept_desc>Computer systems organization~Redundancy</concept_desc>
-  <concept_significance>300</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010553.10010554</concept_id>
-  <concept_desc>Computer systems organization~Robotics</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
- <concept>
-  <concept_id>10003033.10003083.10003095</concept_id>
-  <concept_desc>Networks~Network reliability</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
-</ccs2012>
-\end{CCSXML}
 
-\ccsdesc[500]{Computer systems organization~Embedded systems}
-\ccsdesc[300]{Computer systems organization~Redundancy}
-\ccsdesc{Computer systems organization~Robotics}
-\ccsdesc[100]{Networks~Network reliability}
-
-\keywords{WORD1, WORD2, WORD3}
+\keywords{Dominating Queen Problem, ILS, Metaheuristic}
 
 \maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction}
+\section{Introdução}
 
-O problema de dominação de rainhas é um problema muito bem conhecido
-dentre os problemas de xadrez. Nele, dado um tabuleiro nxn, 
-queremos descobrir qual é a menor quantidade de rainhas possível de forma
-à dominar todo o tabuleiro.
+O problema de dominação de rainhas é muito bem conhecido
+dentre os problemas de xadrez. Nele, dado um tabuleiro \textit{nxn}, temos n quadrados
+dispostos nas linhas e n quadrados nas colunas. Quando uma rainha Q 
+é disposta no tabuleiro, ela domina a linha, a coluna, e as diagonais
+que passam pela sua posição. O objetivo do problema é descobrir a disposição da
+ menor quantidade de rainhas possível de forma à dominar todo o tabuleiro.
 
-Nesse artigo, propomos uma solução baseada em ILS e iremos comparar
-nossos resultados com o método descrito em~\cite{SimoneBeauvoir}, 
+ Algoritmos evolucionários provaram ter sucesso para resolver e otimizar
+  uma grande variedade de problemas complexos, incluindo problemas combinatórios,
+  como o estudado aqui, em um tempo computacional razoavelmente aceitável.~\cite{doerr2011evolutionary}
+
+\textit{Local Search}, ou Busca Local, é um método heurístico para resolver problemas 
+computacionalmente difíceis. Busca local pode ser usada em problemas
+que possam ser formulados como achar a solução maximizando um critério entre várias
+soluções possíveis. Algoritmos de busca local movem de solução à solução no espaço de 
+soluções possíveis aplicando mudanças locais, até uma solução dita ótima ser encontrada.~\cite{hoos2004stochastic}
+
+Um problema da Busca Local é que ela pode ficar presa em um mínimo local, sem conseguir melhorar
+seu resultado. Para contornar esse problema, utiliza-se \textit{Iterative Local Search},
+ou Busca Local Iterativa. Essa modificação consiste em iterar sobre chamadas da busca local, 
+cada vez começando de um ponto diferente do conjunto de solução perturbando o mínimo local atual 
+de modo que faça a solução chegar em outro ótimo local. Esta perturbação não pode ser muito forte nem 
+muito fraca, pois corre o risco dela acabar encontrando o mesmo mínimo local ou servir como uma inicialização
+aleatória.~\cite{lourencco2010iterated}
+
+  Nesse artigo, propomos uma solução baseada em ILS e iremos comparar
+nossos resultados com o método descrito em~\cite{alharbi2017genetic}, 
 que utiliza Algoritmo Genético e é mais comum na literatura.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Bibliographic Review}
+\section{Motivação}
 
-Textd.soso..
+Decidimos escolher esse problema por ter sido um dos temas que já
+havíamos abordado em uma das apresentações do trabalho, então já 
+tínhamos um certo grau de familiaridade com o assunto. Pesquisando mais
+à fundo, vimos que as soluções mais comuns para a solução do Problema 
+de Dominação de Rainhas eram com \textit{Backtracking} e Algoritmo Genético.
+Além disso, de acordo com~\cite{alharbi2017genetic}, existem muitos artigos procurando
+os limites superior e inferior do problema, mas não existe muito esforço de pesquisa
+na busca de soluções práticas para o problema.
+
+Visto essas condições, decidimos propor uma solução baseada em \textit{Iterative
+Local Search} para o problema e comparar os resultados com uma solução em
+Algoritmo Guloso.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methodology}
 
-Textosoxc...d
+O \textit{Local Search} foi implementado com 1 de distância pela nossa implementação
+estar utilizando uma matriz e não um vetor contendo todas as posições do tabuleiro. Embora usar um
+\textit{Local Search} com distâncias maiores gere resultados melhores, isso teria a consequência
+negativa de aumentar exponencialmente o tempo computacional da execução do algoritmo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results}
+\section{Resultados}
 
 Nossos testes foram rodados em uma máquina Intel Core i5-7200U com 8GB de RAM, usando o sistema operacional 
-Manjaro Linux com o pacote gráfico KDE Plasma.
+Manjaro Linux com o pacote gráfico KDE Plasma. A linguagem de programação
+utilizada foi Python 3.7.1.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusion}
+\section{Conclusão}
 
 Text...
 
