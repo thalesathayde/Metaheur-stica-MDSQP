@@ -3,6 +3,8 @@
 \usepackage{booktabs}
 \usepackage[brazil]{babel}   
 \usepackage[utf8]{inputenc}
+\usepackage[]{algorithm2e}
+\usepackage{graphics}
 
 % Copyright
 %\setcopyright{none}
@@ -15,19 +17,19 @@
 %\setcopyright{cagovmixed}
 
 % DOI
-\acmDOI{10.475/123_4}
+%\acmDOI{10.475/123_4}
 
 % ISBN
-\acmISBN{123-4567-24-567/08/06}
+%\acmISBN{123-4567-24-567/08/06}
 
 %Conference
-\acmConference[WOODSTOCK'97]{ACM Woodstock conference}{July 1997}{El
-  Paso, Texas USA}
-\acmYear{1997}
-\copyrightyear{2016}
+\acmConference[Pesquisa Operacional]{Trabalho Final da disciplina de
+Pesquisa Operacional da UFF, 2018.2}
+\acmYear{2018}
+\copyrightyear{2018}
 
-\acmArticle{4}
-\acmPrice{15.00}
+%\acmArticle{4}
+%\acmPrice{15.00}
 
 \begin{document}
 \title{Proposta de solução do Problema de Dominação de Rainhas Utilizando ILS}
@@ -85,7 +87,7 @@ que possam ser formulados como achar a solução maximizando um critério entre 
 soluções possíveis. Algoritmos de busca local movem de solução à solução no espaço de 
 soluções possíveis aplicando mudanças locais, até uma solução dita ótima ser encontrada.~\cite{hoos2004stochastic}
 
-Um problema da Busca Local é que ela pode ficar presa em um mínimo local, sem conseguir melhorar
+Um dos problemas da Busca Local é que ela pode ficar presa em um mínimo local, sem conseguir melhorar
 seu resultado. Para contornar esse problema, utiliza-se \textit{Iterative Local Search},
 ou Busca Local Iterativa. Essa modificação consiste em iterar sobre chamadas da busca local, 
 cada vez começando de um ponto diferente do conjunto de solução perturbando o mínimo local atual 
@@ -93,16 +95,16 @@ de modo que faça a solução chegar em outro ótimo local. Esta perturbação n
 muito fraca, pois corre o risco dela acabar encontrando o mesmo mínimo local ou servir como uma inicialização
 aleatória.~\cite{lourencco2010iterated}
 
-  Nesse artigo, propomos uma solução baseada em ILS e iremos comparar
-nossos resultados com o método descrito em~\cite{alharbi2017genetic}, 
-que utiliza Algoritmo Genético e é mais comum na literatura.
+  Neste artigo, propomos uma solução baseada em \textit{Iterative Local Search} para o Problema de Dominação de Rainhas. 
+  Nossos resultados serão comparados diretamente com o método descrito em~\cite{alharbi2017genetic}, 
+que utiliza Algoritmo Genético e é o mais comumente encontrado para solucionar este problema. Depois disso, 
+iremos debater os resultados alcançados.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Motivação}
 
-Decidimos escolher esse problema por ter sido um dos temas que já
-havíamos abordado em uma das apresentações do trabalho, então já 
-tínhamos um certo grau de familiaridade com o assunto. Pesquisando mais
+Decidimos escolher o \textit{Dominating Queens Problem} por ter sido um dos temas abordados por um dos
+membros do grupo durante a disciplina, o que nos deu um certo grau de familiaridade com o assunto. Pesquisando mais
 à fundo, vimos que as soluções mais comuns para a solução do Problema 
 de Dominação de Rainhas eram com \textit{Backtracking} e Algoritmo Genético.
 Além disso, de acordo com~\cite{alharbi2017genetic}, existem muitos artigos procurando
@@ -114,12 +116,73 @@ Local Search} para o problema e comparar os resultados com uma solução em
 Algoritmo Guloso.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trabalhos Relacionados}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{dom1rainha8x8.png}
+  \caption{Exemplo da linha de dominação de uma rainha em um tabuleiro de xadrez \textit{8x8}}
+  \label{fig:1rainha}
+\end{figure}
+
+Figure \ref{fig:1rainha} shows a boat.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{dom2rainha8x8.png}
+  \caption{Exemplo de um tabuleiro de tamanho \textit{8x8} sendo completamente dominado por
+  quatro rainhas}
+  \label{fig:2rainha}
+\end{figure}
+
+Figure \ref{fig:2rainha} shows a boat.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methodology}
 
 O \textit{Local Search} foi implementado com 1 de distância pela nossa implementação
 estar utilizando uma matriz e não um vetor contendo todas as posições do tabuleiro. Embora usar um
 \textit{Local Search} com distâncias maiores gere resultados melhores, isso teria a consequência
 negativa de aumentar exponencialmente o tempo computacional da execução do algoritmo.
+
+Pseudocódigo do ILS
+\begin{algorithm}
+  \KwData{rainhas, tabuleiro}
+  \KwResult{how to write algorithm with \LaTeX2e }
+  initialization\;
+  listaMovimentos = [0..7]\;
+  melhorResultado\;
+  \While{rainhas}{
+  
+   embaralha(rainhas)\;
+   \eIf{understand}{
+    go to next section\;
+    current section becomes this one\;
+    }{
+    go back to the beginning of current section\;
+   }
+  }
+  \caption{Pseudocódigo do algoritmo de ILS utilizado}
+ \end{algorithm}
+
+ \begin{algorithm}
+  \KwData{rainhas, tabuleiro}
+  \KwResult{how to write algorithm with \LaTeX2e }
+  initialization\;
+  listaMovimentos = [0..7]\;
+  melhorResultado\;
+  \While{rainhas}{
+  
+   embaralha(rainhas)\;
+   \eIf{understand}{
+    go to next section\;
+    current section becomes this one\;
+    }{
+    go back to the beginning of current section\;
+   }
+  }
+  \caption{Pseudocódigo do Algoritmo Genético utilizado}
+ \end{algorithm}
+ 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
