@@ -66,8 +66,9 @@ def imprimir(rainhas: list,tabuleiro: int):
                 lista.append("R")
 
     for i in range(0,tabuleiro):
-        print(lista[0 + i * tabuleiro],lista[1 + i * tabuleiro],lista[2 + i * tabuleiro],lista[3 + i * tabuleiro],
-              lista[4 + i * tabuleiro],lista[5 + i * tabuleiro],lista[6 + i * tabuleiro],lista[7 + i * tabuleiro])
+        for j in range(0, tabuleiro):
+            print(lista[j + i * tabuleiro],end=' ')
+        print()
         '''print("| "+lista[0+i*tabuleiro],"| "+lista[1+i*tabuleiro],"| "+lista[2+i*tabuleiro],"| "+lista[3+i*tabuleiro],
               "| "+lista[4+i*tabuleiro],"| "+lista[5+i*tabuleiro],"| "+lista[6+i*tabuleiro],"| "+lista[7+i*tabuleiro]+" |")'''
 
