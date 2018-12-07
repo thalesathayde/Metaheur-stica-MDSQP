@@ -82,7 +82,7 @@ def randomIndividual(queenQuantity: int, tabuleiro: int):
         while (rand1,rand2) in resp:
             rand1 = randint(0, tabuleiro-1)
             rand2 = randint(0, tabuleiro-1)
-        tupla=(rand1,rand2)
+        tupla=[rand1,rand2]
         resp.append(tupla)
     return resp
 
@@ -253,10 +253,41 @@ print("\n"+str(fitness(totalDaDominacao(rainhas, 8),8))+"\n")
 rainhas=[[0,2],[1,1],[6,0],[7,3],[3,6]]
 imprimir(rainhas,8)
 print("\nfitness: "+str(fitness(totalDaDominacao(rainhas, 8),8))+"\n")'''
-rainhas=[[1,1],[1,2],[1,3]]
+
+
+'''rainhas=[[1,1],[1,2],[1,3]]
 imprimir(rainhas,8)
 print("Meu fitness eh " + str(fitness(totalDaDominacao(rainhas, 8), 8)))
 rainhas = localSearch(rainhas, 8)
 print(rainhas)
 imprimir(rainhas,8)
 print("Meu fitness eh " + str(fitness(totalDaDominacao(rainhas, 8), 8)))
+rainhas= perturbation(rainhas,6,8)
+imprimir(rainhas,8)
+print("Meu fitness eh perturbado" + str(fitness(totalDaDominacao(rainhas, 8), 8)))
+rainhas = localSearch(rainhas, 8)
+print(rainhas)
+imprimir(rainhas,8)
+print("Meu fitness eh " + str(fitness(totalDaDominacao(rainhas, 8), 8)))'''
+
+tabuleiro = 8
+quantidadeDeRainhas = 5
+perturbationTimes = 10
+maxIterations = 1000
+
+rainhas=randomIndividual(quantidadeDeRainhas,tabuleiro)
+rainhas=localSearch(rainhas,tabuleiro)
+best = deepcopy(rainhas)
+count=0
+for i in range(maxIterations):
+    if fitness(totalDaDominacao(best,tabuleiro),tabuleiro) == 1:
+        break
+    rainhas=perturbation(rainhas,perturbationTimes,tabuleiro)
+    rainhas=localSearch(rainhas,tabuleiro)
+    count+=1
+    if fitness(totalDaDominacao(rainhas,tabuleiro),tabuleiro)>fitness(totalDaDominacao(rainhas,tabuleiro),tabuleiro):
+        best = deepcopy(rainhas)
+
+imprimir(best,tabuleiro)
+print("Meu fitness eh " + str(fitness(totalDaDominacao(best, tabuleiro), tabuleiro)))
+print(count)
