@@ -85,6 +85,26 @@ def randomIndividual(queenQuantity: int, tabuleiro: int):
         resp.append(tupla)
     return resp
 
+def moveUp(queen: list, board:int):
+    if queen[0] < board - 1:
+        queen[0] = queen[0] - 1
+    return queen
+
+def moveDown(queen: list, board:int):
+    if queen[0] > 0:
+        queen[0] = queen[0]-1
+    return queen
+
+def moveRight(queen: list, board:int):
+    if queen[1] < board - 1:
+        queen[1] = queen[1]+1
+    return queen
+
+def moveLeft(queen:list, board:int):
+    if queen[1] > 0:
+        queen[1] = queen[1]-1
+    return queen
+
 def localSearch(queens: list, board: int):
     listBase = []
     listMoves = [0,1,2,3]
@@ -99,23 +119,13 @@ def localSearch(queens: list, board: int):
         shuffle(listMoves)
         for i in range(len(listMoves)):
             if i==0:
-                #SEMPRE DIMINUI SÓ UMA VEZ CADA RAINHA
-                if queensAux[index][0]<board-1:
-                    queensAux[index][0]=queensAux[index][0]-1
-                    print("\n\n\n\n\n\n")
-                    print(queens[index][0])
-                    print(queensAux[index][0])
-                    print("\n\n\n\n\n\n")
-                #NÃO ESTAO FAZENDO NADA
+                queensAux[index]=moveUp(queensAux[index],board)
             if i==1:
-                if queensAux[index][1]<board-1:
-                    queensAux[index][1]+=1
+                queensAux[index]=moveRight(queensAux[index],board)
             if i==2:
-                if queensAux[index][0]>0:
-                    queensAux[index][0]-=1
+                queensAux[index]=moveDown(queensAux[index],board)
             if i==3:
-                if queensAux[index][1]>0:
-                    queensAux[index][1]-=1
+                queensAux[index]=moveLeft(queensAux[index], board)
 
             #ESTÁ DANDO SEMPRE QUE O FITNESS DOS DOIS É IGUAL
             a=fitness(queensAux,board) - fitness(best,board)
