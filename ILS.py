@@ -128,10 +128,10 @@ def localSearch(queens: list, board: int):
             if listMoves[i]==3:
                 queensAux[index]=moveLeft(queensAux[index], board)
 
-            #ESTÁ DANDO SEMPRE QUE O FITNESS DOS DOIS É IGUAL
-            print("novo eh " + str(fitness(totalDaDominacao(queensAux, board),board)) + " velho eh " +
-            str(fitness(totalDaDominacao(best,board), board))) 
-            a=fitness(totalDaDominacao(queensAux, board),board) - fitness(totalDaDominacao(best,board), board)
+            melhorFitness = fitness(totalDaDominacao(best,board), board)
+            atualFitness = fitness(totalDaDominacao(queensAux, board),board)
+            print("novo eh " + str(atualFitness) + " velho eh " + str(melhorFitness))
+            a = atualFitness - melhorFitness
             print("a:"+str(a))
             imprimir(queensAux, board)
             print("----------")
