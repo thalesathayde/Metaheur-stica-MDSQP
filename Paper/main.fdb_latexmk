@@ -1,13 +1,14 @@
 # Fdb version 3
-["bibtex main"] 1544195156 "main.aux" "main.bbl" "main" 1544195685
+["bibtex main"] 1544195156 "main.aux" "main.bbl" "main" 1544196023
   "./ACM-Reference-Format.bst" 1543800532 83479 53d55cf5e954c8907ec8f61116838886 ""
   "bibliography.bib" 1543800532 145 f6f8f2f8b51769d6465fec8f73564b39 ""
   "main.aux" 1544195685 1596 4a9476a0619574d793ee193954acd9de ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1544195684 "/home/edoarda/acm-template/main.tex" "main.pdf" "main" 1544195685
-  "/home/edoarda/acm-template/main.tex" 1544195683 3564 51acb26f437640e47964a631cd089a36 ""
+["pdflatex"] 1544195684 "/home/edoarda/Documentos/UFF/Metaheur-stica-MDSQP/Paper/main.tex" "main.pdf" "main" 1544196023
+  "/home/edoarda/Documentos/UFF/Metaheur-stica-MDSQP/Paper/main.tex" 1544196022 3564 51acb26f437640e47964a631cd089a36 ""
+  "/home/edoarda/acm-template/main.tex" 1544195891 3564 51acb26f437640e47964a631cd089a36 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1543696176 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1543696176 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1543696176 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -146,11 +147,11 @@
   "main.aux" 1544195685 1596 4a9476a0619574d793ee193954acd9de ""
   "main.bbl" 1544195156 2081 999e6a11ce23296521b35dc1e38afa9d "bibtex main"
   "main.out" 1544195685 769 6e4f69f10f93d8a491c08fbeb8ae30fe ""
-  "main.tex" 1544195683 3564 51acb26f437640e47964a631cd089a36 ""
+  "main.tex" 1544196022 3564 51acb26f437640e47964a631cd089a36 ""
   "xstring.sty" 1381671102 144 0ca8d67b000b795a4d9ec000e0fd09c7 ""
   "xstring.tex" 1381671102 54373 fd4487ae3e45d4074bc89aea1d2b6807 ""
   (generated)
-  "main.out"
-  "main.aux"
-  "main.pdf"
   "main.log"
+  "main.aux"
+  "main.out"
+  "main.pdf"

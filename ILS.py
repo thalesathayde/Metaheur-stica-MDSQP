@@ -2,8 +2,8 @@ from random import randint
 from random import uniform
 from random import shuffle
 
-def fitness(a: list, tabuleiro: int):
-    c=len(a)/tabuleiro**2
+def fitness(dominio: list, tabuleiro: int):
+    c=len(dominio)/tabuleiro**2
     return c
 
 #"{:b}".format(decimal_number): passa de decimal para binario sem o 0b na frente
@@ -86,13 +86,13 @@ def randomIndividual(queenQuantity: int, tabuleiro: int):
     return resp
 
 def moveUp(queen: list, board:int):
-    if queen[0] < board - 1:
+    if queen[0] > 0:
         queen[0] = queen[0] - 1
     return queen
 
 def moveDown(queen: list, board:int):
-    if queen[0] > 0:
-        queen[0] = queen[0]-1
+    if queen[0] < board - 1:
+        queen[0] = queen[0]+1
     return queen
 
 def moveRight(queen: list, board:int):
@@ -118,19 +118,19 @@ def localSearch(queens: list, board: int):
         index=lista.pop()
         shuffle(listMoves)
         for i in range(len(listMoves)):
-            if i==0:
+            if listMoves[i]==0:
                 queensAux[index]=moveUp(queensAux[index],board)
-            if i==1:
+            if listMoves[i]==1:
                 queensAux[index]=moveRight(queensAux[index],board)
-            if i==2:
+            if listMoves[i]==2:
                 queensAux[index]=moveDown(queensAux[index],board)
-            if i==3:
+            if listMoves[i]==3:
                 queensAux[index]=moveLeft(queensAux[index], board)
 
             #ESTÁ DANDO SEMPRE QUE O FITNESS DOS DOIS É IGUAL
-            a=fitness(queensAux,board) - fitness(best,board)
+            a=fitness(totalDaDominacao(queensAux, board),board) - fitness(totalDaDominacao(best,board), board)
             print("a:"+str(a))
-            if fitness(queensAux,board) > fitness(best,board):
+            if fitness(totalDaDominacao(queensAux, board),board) > fitness(totalDaDominacao(best,board), board):
                 best = queensAux.copy()
                 lista = listBase.copy()
                 shuffle(lista)
@@ -149,5 +149,8 @@ imprimir(rainhas,8)
 print("\nfitness: "+str(fitness(totalDaDominacao(rainhas, 8),8))+"\n")
 rainhas=[[7,1],[1,2],[1,3]]
 imprimir(rainhas,8)
-print(localSearch(rainhas,8))
+print("Meu fitness eh " + str(fitness(totalDaDominacao(rainhas, 8), 8)))
+rainhas = localSearch(rainhas, 8)
+print(rainhas)
+
 imprimir(rainhas,8)
