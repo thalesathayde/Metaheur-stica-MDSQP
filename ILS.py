@@ -1,6 +1,7 @@
 from random import randint
 from random import uniform
 from random import shuffle
+from copy import deepcopy
 
 def fitness(dominio: list, tabuleiro: int):
     c=len(dominio)/tabuleiro**2
@@ -109,7 +110,7 @@ def localSearch(queens: list, board: int):
     listBase = []
     listMoves = [0,1,2,3]
     queensAux = queens.copy()
-    best = queens.copy()
+    best = deepcopy(queens)
     for i in range(len(queens)):
         listBase.append(i)
     lista = listBase.copy()
@@ -128,10 +129,14 @@ def localSearch(queens: list, board: int):
                 queensAux[index]=moveLeft(queensAux[index], board)
 
             #ESTÁ DANDO SEMPRE QUE O FITNESS DOS DOIS É IGUAL
+            print("novo eh " + str(fitness(totalDaDominacao(queensAux, board),board)) + " velho eh " +
+            str(fitness(totalDaDominacao(best,board), board))) 
             a=fitness(totalDaDominacao(queensAux, board),board) - fitness(totalDaDominacao(best,board), board)
             print("a:"+str(a))
+            imprimir(queensAux, board)
+            print("----------")
             if fitness(totalDaDominacao(queensAux, board),board) > fitness(totalDaDominacao(best,board), board):
-                best = queensAux.copy()
+                best = deepcopy(queensAux)
                 lista = listBase.copy()
                 shuffle(lista)
                 break
