@@ -1,3 +1,5 @@
+from random import randint
+from random import uniform
 
 def fitness(a: list, tabuleiro: int):
     c=len(a)/tabuleiro**2
@@ -69,6 +71,17 @@ def imprimir(rainhas: list,tabuleiro: int):
         '''print("| "+lista[0+i*tabuleiro],"| "+lista[1+i*tabuleiro],"| "+lista[2+i*tabuleiro],"| "+lista[3+i*tabuleiro],
               "| "+lista[4+i*tabuleiro],"| "+lista[5+i*tabuleiro],"| "+lista[6+i*tabuleiro],"| "+lista[7+i*tabuleiro]+" |")'''
 
+def randomIndividual(queenQuantity: int, tabuleiro: int):
+    resp=[]
+    for i in range(queenQuantity):
+        rand1=randint(0,tabuleiro-1)
+        rand2=randint(0,tabuleiro-1)
+        while (rand1,rand2) in resp:
+            rand1 = randint(0, tabuleiro-1)
+            rand2 = randint(0, tabuleiro-1)
+        tupla=(rand1,rand2)
+        resp.append(tupla)
+    return resp
 
 rainhas=[(3,1)]
 imprimir(rainhas,8)
