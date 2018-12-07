@@ -140,6 +140,8 @@ def localSearch(queens: list, board: int):
                 lista = listBase.copy()
                 shuffle(lista)
                 break
+            else:
+                queensAux = deepcopy(best)
 
     return best
 
@@ -152,7 +154,7 @@ print("\n"+str(fitness(totalDaDominacao(rainhas, 8),8))+"\n")
 rainhas=[[0,2],[1,1],[6,0],[7,3],[3,6]]
 imprimir(rainhas,8)
 print("\nfitness: "+str(fitness(totalDaDominacao(rainhas, 8),8))+"\n")
-rainhas=[[7,1],[1,2],[1,3]]
+rainhas=[[1,1],[1,2],[1,3]]
 imprimir(rainhas,8)
 print("Meu fitness eh " + str(fitness(totalDaDominacao(rainhas, 8), 8)))
 rainhas = localSearch(rainhas, 8)
