@@ -143,7 +143,8 @@ def moveDownLeft(queen: list, board:int, queens:list):
             queen[1] = queen[1] - 1
     return queen
 
-def localSearch(queens: list, board: int):
+#greed search
+def old_localSearch(queens: list, board: int):
     listBase = []
     listMoves = [0,1,2,3,4,5,6,7]
     queensAux = queens.copy()
@@ -187,6 +188,46 @@ def localSearch(queens: list, board: int):
                 break
             else:
                 queensAux = deepcopy(best)
+
+    return best
+
+def localSearch(queens: list, board: int):
+    queensAux = queens.copy()
+    best = deepcopy(queens)
+    oldBest = []
+    while(oldBest!=best):
+        oldBest=deepcopy(best)
+        for j in range(len(queens)):
+            for i in range(8):
+                if i==0:
+                    queensAux[j]=moveUp(queensAux[j],board,queensAux)
+                if i==1:
+                    queensAux[j]=moveRight(queensAux[j],board,queensAux)
+                if i==2:
+                    queensAux[j]=moveDown(queensAux[j],board,queensAux)
+                if i==3:
+                    queensAux[j]=moveLeft(queensAux[j], board,queensAux)
+                if i==4:
+                    queensAux[j]=moveUpRight(queensAux[j], board,queensAux)
+                if i==5:
+                    queensAux[j]=moveUpLeft(queensAux[j], board,queensAux)
+                if i==6:
+                    queensAux[j]=moveDownRight(queensAux[j], board,queensAux)
+                if i==7:
+                    queensAux[j]=moveDownLeft(queensAux[j], board,queensAux)
+
+            '''melhorFitness = fitness(totalDaDominacao(best,board), board)
+            atualFitness = fitness(totalDaDominacao(queensAux, board),board)
+            print("novo eh " + str(atualFitness) + " velho eh " + str(melhorFitness))
+            a = atualFitness - melhorFitness
+            print("a:"+str(a))
+            imprimir(queensAux, board)
+            print("----------")'''
+
+            if fitness(totalDaDominacao(queensAux, board),board) > fitness(totalDaDominacao(best,board), board):
+                best = deepcopy(queensAux)
+            else:
+                queensAux = deepcopy(oldBest)
 
     return best
 
@@ -286,10 +327,11 @@ count=1
 for i in range(maxIterations):
     if fitness(totalDaDominacao(best,tabuleiro),tabuleiro) == 1:
         break
+    oldBest=deepcopy(best)
     rainhas=perturbation(rainhas,perturbationTimes,tabuleiro)
     rainhas=localSearch(rainhas,tabuleiro)
     count+=1
-    if fitness(totalDaDominacao(rainhas,tabuleiro),tabuleiro)>fitness(totalDaDominacao(rainhas,tabuleiro),tabuleiro):
+    if fitness(totalDaDominacao(rainhas,tabuleiro),tabuleiro)>fitness(totalDaDominacao(oldBest,tabuleiro),tabuleiro):
         best = deepcopy(rainhas)
 
 print("iterações: "+str(count))
