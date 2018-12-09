@@ -268,8 +268,8 @@ print(randint(0, tamanho-1))'''
 start = time.time()
 
 individualQuantity = 100
-queensQuantity = 5
-tabuleiro = 8
+queensQuantity = 8
+tabuleiro = 14
 mutationChance = 0.05
 mutationQuantity= 2 #quantos bits mudam por ver
 procriatorQuantity=int(individualQuantity/2)

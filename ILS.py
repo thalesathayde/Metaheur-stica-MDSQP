@@ -40,7 +40,7 @@ def dominacao(rainha: list, tabuleiro: int):
         tupla=[rainha[0]+i,rainha[1]-i]
         if tupla not in lista:
             lista.append(tupla)
-    #inferior direito :erro
+    #inferior direito
     for i in range(1,min(tabuleiro-rainha[0]-1,tabuleiro-rainha[1]-1)+1):
         tupla=[rainha[0]+i, rainha[1]+i]
         if tupla not in lista:
@@ -314,8 +314,8 @@ print("Meu fitness eh " + str(fitness(totalDaDominacao(rainhas, 8), 8)))'''
 
 start=time.time()
 
-tabuleiro = 8
-quantidadeDeRainhas = 5
+tabuleiro = 18
+quantidadeDeRainhas = 9
 perturbationTimes = 10 #5~10
 maxIterations = 1000
 
@@ -323,7 +323,7 @@ rainhas=randomIndividual(quantidadeDeRainhas,tabuleiro)
 #print("Meu fitness inicial eh " + str(fitness(totalDaDominacao(rainhas, tabuleiro), tabuleiro)))
 rainhas=localSearch(rainhas,tabuleiro)
 best = deepcopy(rainhas)
-count=1
+count=0
 for i in range(maxIterations):
     if fitness(totalDaDominacao(best,tabuleiro),tabuleiro) == 1:
         break

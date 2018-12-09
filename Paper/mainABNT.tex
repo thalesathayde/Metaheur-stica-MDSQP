@@ -61,6 +61,7 @@
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage[]{algorithm2e}
+\usepackage{amsmath}
 % ---
 		
 % ---
@@ -237,7 +238,7 @@ o endereço eletrônico, DOI, suportes e outras informações relativas ao acess
 % ----------------------------------------------------------
 \section{Introdução}
 
-O problema de dominação de rainhas é muito bem conhecido dentre os problemas de xadrez. Nele, dado um tabuleiro \textit{n $\times$ n}, temos n quadrados dispostos nas linhas e n quadrados nas colunas. Quando uma rainha Q é disposta no tabuleiro, ela domina a linha, a coluna, e as diagonais que passam pela sua posição.~\ref{fig:1rainha} O objetivo do problema é descobrir a disposição da menor quantidade de rainhas possível de forma à dominar todo o tabuleiro.
+O problema de dominação de rainhas é muito bem conhecido dentre os problemas de xadrez. Nele, dado um tabuleiro \textit{n $\times$ n}, temos n quadrados dispostos nas linhas e n quadrados nas colunas. Quando uma rainha Q é disposta no tabuleiro, ela domina a linha, a coluna, e as diagonais que passam pela sua posição. [Vide Figura ~\ref{fig:1rainha}] O objetivo do problema é descobrir a disposição da menor quantidade de rainhas possível de forma à dominar todo o tabuleiro.
 
  Algoritmos evolucionários provaram ter sucesso para resolver e otimizar uma grande variedade de problemas complexos, incluindo problemas combinatórios, como o estudado aqui, em um tempo computacional razoavelmente aceitável.~\cite{doerr2011evolutionary}
 
@@ -282,7 +283,7 @@ Muitas soluções para o problema das n rainhas foram propostas, dentre elas bac
 
 Em contrapartida, o problema de dominação de rainhas não recebeu tanta atenção dentre os pesquisadores das ciências da computação. Na realidade, várias pesquisas se preocuparam em pesquisar o problema porém só adotaram modelos matemáticos.~\cite{alharbi2017genetic} Burger e Mynhart apontaram que o problema de dominação das rainhas é um dos mais difíceis problemas de xadrez.~\cite{art43}
 Esse problema é comumente definido como achar o menor número possível de rainhas em um tabuleiro \textit{n $\times$ n} que consigam a dominação total do tabuleiro. Esse número é conhecido como número de dominação e sua notação é $\gamma(\textbf{Qn})$.
-Muitos pesquisadores focaram em descobrir os limites superior e inferior do problema desde a década de 70,  e o número mínimo possível de rainhas para solucionar o problema ($\gamma(\textbf{Qn})$) foi calculado para diversos tamanhos de tabuleiro (vide tabela~\ref{tabela1})~\cite{art3,art43,art44,art45}.
+Muitos pesquisadores focaram em descobrir os limites superior e inferior do problema desde a década de 70,  e o número mínimo possível de rainhas para solucionar o problema ($\gamma(\textbf{Qn})$) foi calculado para diversos tamanhos de tabuleiro [vide Tabela~\ref{tabela1}]~\cite{art3,art43,art44,art45}.
 
 \begin{table*}[ht]
   \caption{Número mínimo de rainhas para dominação total $\gamma(\textbf{Qn})$ de um tabuleiro de tamanho $\textit{n}$.}
@@ -300,23 +301,77 @@ Muitos pesquisadores focaram em descobrir os limites superior e inferior do prob
 
 Para este problema ser usado num computador tivemos que fazer as seguintes coisas. 
 
-Cada casa do tabuleiro é representada por uma tupla $(x,y)$ onde obviamente $x$ é o eixo \textit{x} e $y$ é o eixo \textit{y}. Com isso cada rainha é representada por um $(x,y)$ que é sua posição no tabuleiro.
+Cada casa do tabuleiro é representada por uma tupla $(x,y)$ onde obviamente $x$ é o eixo \textit{x} e $y$ é o eixo \textit{y}, onde $x$ e $y$ podem ser um número de 0 até $n$ - 1, onde o tamanho total do tabuleiro é representado por $n \times n$. Com isso cada rainha é representada por um $(x,y)$ que é sua posição no tabuleiro.
 
-Para representar um individuo a gente usa um conjunto \textbf{Q={(x{_{1}},y{_{1}}),(x{_{2}},y{_{2}}),..,(x{_{n}},y{_{n}})}} onde a tupla \textbf{(x{_{1}},y{_{1}})} representa a rainha de indece 1.
+Para representar um indivíduo usaremos  um conjunto $Q$ de rainhas de modo que $Q=\{(x{_{1}},y{_{1}}), (x{_{2}},y{_{2}}), ..., (x{_{n}},y{_{n}})\}$ onde a tupla \textbf{$(x{_{1}},y{_{1}})$} representa a rainha de índice 1. 
 
-\section{Methodology}
+Cada rainha por sua vez possui um conjunto $D$ que representa todos as posições de dominação daquela rainha, onde $D{_{i}}=\{(x{_{1}},y{_{1}}), (x{_{2}},y{_{2}}), ..., (x{_{n}},y{_{n}})\}$ onde $D{_{i}}$ representa a rainha de $i$-ésima posição no indivíduo.
 
-A nossa metodologia foi utilisar um \textit{ILS} basico. Ele gera um início randômico, passa ele para o \textit{Local Search}, salva o individuo se o fitness dele for o melhor. Em seguida ele pega esse ultimo individuo gerado pelo \textit{Local Search} e o modifica usando nossa função de \textit{Perturbação} para em seguida enviar esse novo individuo para o \textit{Local Search} fazendo um loop. Este exemplo pode ser visto no Pseudocódigo ~\ref{pseudoILS}.
+Além disso, $D{_{total}}$ é representado por:
 
-\subsection{Fitness}
+\begin{equation}
+ D{_{total}}=\sum_{i=1}^{r}\bigcup D{_{i}}
+\end{equation}
 
-Nosso fitness é baseado no fitness do paper de algoritimo genérico ~\cite{alharbi2017genetic}.
+\subsection{Cálculo da Dominação}
 
-Dado o conjunto D
+Para calcular a dominação de uma rainha nós separamos nas seguintes equações:
 
-O \textit{ILS} começa gerando um inicio randômico, onde ele bota x rainhas no tabuleiro onde x é uma variável do programa. A única restrição deste inicio aléatorio é que duas rainhas não podem ocupar o mesmo quadrado.
+\begin{equation}
+  \sum_{i=0}^{n} \bigcup (x, i) \\
+\end{equation}
+\begin{equation}
+  \sum_{i=0}^{n} \bigcup (i, y) \\
+\end{equation}
+\begin{equation}
+  \sum_{i=1}^{min(x,y)+1} \bigcup (x-i, y-i) \\
+\end{equation}
+\begin{equation}
+  \sum_{i=1}^{min(x,n-y-1)+1} \bigcup (x-i, y+i) \\
+\end{equation}
+\begin{equation}
+  \sum_{i=1}^{min(n-x-1,y)+1} \bigcup (x+i, y-i) \\
+\end{equation}
+\begin{equation}
+  \sum_{i=1}^{min(n-x,n-y)} \bigcup (x+i, y+i)
+\end{equation}
 
-Após isso, o inicio randômico é mandado para o \textit{Local Search} que foi implementado vendo a movimentação de cada rainha para cada direção com 1 de distância (direita, esquerda, cima, baixo e diagonais) ~\ref{possiveisMovimentacoes}. Motivo desta implementação é o fato de cada possível movimentação virar uma matriz, e não um vetor, contendo todas as posições a um de distancia de cada rainha no tabuleiro. Embora usar um \textit{Local Search} com distâncias maiores gere resultados melhores, isso teria a consequência negativa de aumentar exponencialmente o tempo computacional da execução do algoritmo.
+As equações (2) e (3) representam a horizontal e vertical, respectivamente, (4) e (5) representam respectivamente as diagonais superiores esquerda e direita e (6) e (7) as diagonais inferiores esquerda e direita.
+
+E o $D$ de uma rainha é a união de todas essas equações para ela.
+\section{Metodologia}
+
+A nossa metodologia foi utilizar um \textit{ILS} basico. Ele gera um início randômico, passa ele para o \textit{Local Search}, salva o indivíduo se o $fitness$ dele for o melhor. Em seguida ele pega esse ultimo indivíduo gerado pelo \textit{Local Search} e o modifica usando nossa função de \textit{Perturbação} para em seguida enviar esse novo indivíduo para o \textit{Local Search} fazendo um loop. Este exemplo pode ser visto no Pseudocódigo ~\ref{pseudoILS}.
+
+\subsection{$Fitness$}
+
+Nosso $fitness$ é baseado no $fitness$ do $paper$ de algoritimo genético ~\cite{alharbi2017genetic}.
+
+Dado o conjunto $D{_{total}}$ que representa a dominação das rainhas, e $n$ representa a quantidade de casas em uma coordenada do tabuleiro temos que:
+
+\begin{equation}
+ fitness = \frac{\left | D{_{total}} \right |}{n^{2}}
+\end{equation}
+
+Temos as seguintes propriedades:
+\begin{itemize}
+
+  \item Quanto maior o $fitness$, melhor o indivíduo.
+  
+  \item Se o $fitness$ for igual à 1, aquela solução é ótima.
+  
+\end{itemize}
+
+\subsection{Início Randômico}
+
+O \textit{ILS} começa gerando um inicio randômico, onde ele bota $r$ rainhas no tabuleiro onde $r$ é uma argumento do programa. A única restrição deste inicio aléatorio é que duas rainhas não podem ocupar o mesmo quadrado e cada rainha deve estar dentro dos limites do tabuleiro.
+
+\subsection{\textit{Local Search}}
+O \textit{Local Search} calcula a movimentação de cada rainha para cada direção com 1 de distância (direita, esquerda, cima, baixo e diagonais) [Vide Figura ~\ref{possiveisMovimentacoes}] Essa movimentação deve atendender as mesmas restrições do início randômico. Motivo desta implementação é o fato de cada possível movimentação virar uma matriz, e não um vetor, contendo todas as posições a um de distancia de cada rainha no tabuleiro. Embora usar um \textit{Local Search} com distâncias maiores gere resultados melhores, isso teria a consequência negativa de aumentar exponencialmente o tempo computacional da execução do algoritmo.
+
+\subsection{Perturbação}
+Para fazer a perturbação a gente realiza um número $p$ de pertubações, onde $p$ é um argumento inicial do programa. 
+Para cada pertubação, escolhe-se uma rainha e realiza-se uma movimentação randômica de uma casa, caindo nas restrições citadas no início randômico.
 
 \begin{figure}
   \centering
@@ -325,8 +380,11 @@ Após isso, o inicio randômico é mandado para o \textit{Local Search} que foi 
   \label{possiveisMovimentacoes}
 \end{figure}
 
-Pseudocódigo do ILS
-\begin{algorithm}
+\RestyleAlgo{boxruled}
+\LinesNumbered
+\begin{algorithm}[ht]
+  \label{pseudoILS}
+  \caption{Pseudocódigo do algoritmo de ILS utilizado}
   \KwData{rainhas, best, maxIterações}
   \KwResult{best - Melhor solução }
   $rainhas \gets randomStart(rainhas)$\;
@@ -339,8 +397,6 @@ Pseudocódigo do ILS
      $best \gets rainhas$\;
    }
   }
-  \label{pseudoILS}
-  \caption{Pseudocódigo do algoritmo de ILS utilizado}
  \end{algorithm}
 
  \begin{algorithm}
@@ -360,7 +416,52 @@ Pseudocódigo do ILS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
 
-Nossos testes foram rodados em uma máquina Intel Core i5-7200U com 8GB de RAM, usando o sistema operacional Manjaro Linux com o pacote gráfico KDE Plasma. A linguagem de programação utilizada foi Python 3.7.1.
+Nossos testes foram rodados em uma máquina Intel Core i5-7400 com 8GB de RAM, usando o sistema operacional Windows 10. A linguagem de programação utilizada foi Python 3.7.0 32-bit.
+
+  \begin{table*}[ht]
+    \caption{Resultados conseguidos em um tabuleiro $14 \times 14$ com 7 rainhas.}
+    \centering
+    \begin{tabular}{|c|c c|}
+      \hline
+      & Melhor $fitness$ (\%) & Tempo de execução (s) \\
+      \hline
+      Algoritmo Genético & 91.3265306122448 & 23.75254201889038 \\
+      ILS (perturbação 5) & 91.8367346938775 & 20.71260714530945 \\
+      ILS (pertubação 10) & 91.3265306122448 & 23.75254201889038 \\
+      \hline
+    \end{tabular}
+    \label{tabela2}
+  \end{table*}
+
+\begin{table*}[ht]
+  \caption{Resultados conseguidos em um tabuleiro $14 \times 14$ com 8 rainhas.}
+  \centering
+  \begin{tabular}{|c|c c|}
+    \hline
+     & Melhor $fitness$ (\%) & Tempo de execução (s) \\
+     \hline
+    Algoritmo Genético & 95.4081632653061 & 115.54515361785889 \\
+    ILS (perturbação 5) & 95.9183673469387 & 30.753767013549805 \\
+    ILS (pertubação 10) & 95.4081632653061 & 29.001476049423218 \\
+    \hline
+  \end{tabular}
+  \label{tabela3}
+\end{table*}
+
+\begin{table*}[ht]
+  \caption{Resultados conseguidos em um tabuleiro $18 \times 18$ com 9 rainhas.}
+  \centering
+  \begin{tabular}{| c|c c|}
+    \hline
+     & Melhor $fitness$ (\%) & Tempo de execução (s) \\
+     \hline
+    Algoritmo Genético & 92.9012345679012 & 251.10087895393372 \\
+    ILS (perturbação 5) & 90.7407407407407 & 59.24564051628113 \\
+    ILS (pertubação 10) & 90.4320987654321 & 67.17142534255981 \\
+    \hline
+  \end{tabular}
+  \label{tabela4}
+\end{table*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusão}

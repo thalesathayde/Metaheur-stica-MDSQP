@@ -1,0 +1,61 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Alharbi e Venkat 2017]{alharbi2017genetic}
+\abntrefinfo{Alharbi e Venkat}{ALHARBI; VENKAT}{2017}
+{ALHARBI, S.; VENKAT, I. A genetic algorithm based approach for solving the
+  minimum dominating set of queens problem.
+\emph{Journal of Optimization}, Hindawi, v.~2017, 2017.}
+
+\bibitem[Bell e Stevens 2009]{bell2009survey}
+\abntrefinfo{Bell e Stevens}{BELL; STEVENS}{2009}
+{BELL, J.; STEVENS, B. A survey of known results and research areas for
+  n-queens.
+\emph{Discrete Mathematics}, Elsevier, v.~309, n.~1, p. 1--31, 2009.}
+
+\bibitem[Burger e Mynhardt 2002]{art43}
+\abntrefinfo{Burger e Mynhardt}{BURGER; MYNHARDT}{2002}
+{BURGER, A.~P.; MYNHARDT, C.~M. An upper bound for the minimum number of queens
+  covering the n$\times$ n chessboard.
+\emph{Discrete Applied Mathematics}, Elsevier, v.~121, n.~1-3, p. 51--60,
+  2002.}
+
+\bibitem[Cockayne 1990]{art3}
+\abntrefinfo{Cockayne}{COCKAYNE}{1990}
+{COCKAYNE, E.~J. Chessboard domination problems.
+\emph{Discrete Mathematics}, Elsevier, v.~86, n.~1-3, p. 13--20, 1990.}
+
+\bibitem[Doerr et al. 2011]{doerr2011evolutionary}
+\abntrefinfo{Doerr et al.}{DOERR et al.}{2011}
+{DOERR, B. et al. Evolutionary algorithms and dynamic programming.
+\emph{Theoretical computer science}, Elsevier, v.~412, n.~43, p. 6020--6035,
+  2011.}
+
+\bibitem[Gibbons e Webb 1997]{art45}
+\abntrefinfo{Gibbons e Webb}{GIBBONS; WEBB}{1997}
+{GIBBONS, P.~B.; WEBB, J. Some new results for the queens domination problem.
+\emph{Australasian Journal of Combinatorics}, CENTRE FOR COMBINATORICS, v.~15,
+  p. 145--160, 1997.}
+
+\bibitem[Hoos e St{\"u}tzle 2004]{hoos2004stochastic}
+\abntrefinfo{Hoos e St{\"u}tzle}{HOOS; ST{\"U}TZLE}{2004}
+{HOOS, H.~H.; ST{\"U}TZLE, T. \emph{Stochastic local search: Foundations and
+  applications}. [S.l.]: Elsevier, 2004.}
+
+\bibitem[Louren{\c{c}}o, Martin e St{\"u}tzle 2010]{lourencco2010iterated}
+\abntrefinfo{Louren{\c{c}}o, Martin e St{\"u}tzle}{LOUREN{\c{C}}O; MARTIN;
+  ST{\"U}TZLE}{2010}
+{LOUREN{\c{C}}O, H.~R.; MARTIN, O.~C.; ST{\"U}TZLE, T. Iterated local search:
+  Framework and applications. In:  \emph{Handbook of metaheuristics}. [S.l.]:
+  Springer, 2010. p. 363--397.}
+
+\bibitem[Weakley 2002]{art44}
+\abntrefinfo{Weakley}{WEAKLEY}{2002}
+{WEAKLEY, W.~D. Upper bounds for domination numbers of the queen's graph.
+\emph{Discrete mathematics}, North-Holland, v.~242, n.~1-3, p. 229--243, 2002.}
+
+\end{thebibliography}
