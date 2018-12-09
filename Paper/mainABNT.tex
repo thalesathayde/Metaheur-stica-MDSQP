@@ -194,7 +194,7 @@
 
 % resumo em português
 \begin{resumoumacoluna}
-Neste artigo, propomos uma solução para o Problema de Dominação de Rainhas usando Busca Iterativa Local e comparamos nossos resultados com uma solução conhecida que utiliza Algoritmo Genético.
+Neste artigo, propomos uma solução para o Problema de Dominação de Rainhas usando Busca Iterativa Local e comparamos nossos resultados com uma solução proposta anteriormente que utiliza Algoritmo Genético.
  
  \vspace{\onelineskip}
  
@@ -208,7 +208,7 @@ Neste artigo, propomos uma solução para o Problema de Dominação de Rainhas u
 \begin{resumoumacoluna}
  \begin{otherlanguage*}{english}
   In this paper, we propose a solution to the Dominating Set of Queens Problem
-  using Iterative Local Search and compare our results with a previous 
+  using Iterative Local Search and compare our results with a previously proposed 
   solution using Genetic Algorithm.
 
    \vspace{\onelineskip}
@@ -222,10 +222,9 @@ Neste artigo, propomos uma solução para o Problema de Dominação de Rainhas u
 % ---
 
 \begin{center}\smaller
-\textbf{Data de submissão e aprovação}: elemento obrigatório. Indicar dia, mês e ano
+\textbf{Data de submissão}: 10 de Dezembro de 2018
 
-\textbf{Identificação e disponibilidade}: elemento opcional. Pode ser indicado 
-o endereço eletrônico, DOI, suportes e outras informações relativas ao acesso.
+\textbf{Identificação e disponibilidade}: medoarda@id.uff.br thalesathaydesantos@id.uff.br
 \end{center}
 
 % ----------------------------------------------------------
@@ -238,7 +237,7 @@ o endereço eletrônico, DOI, suportes e outras informações relativas ao acess
 % ----------------------------------------------------------
 \section{Introdução}
 
-O problema de dominação de rainhas é muito bem conhecido dentre os problemas de xadrez. Nele, dado um tabuleiro \textit{n $\times$ n}, temos n quadrados dispostos nas linhas e n quadrados nas colunas. Quando uma rainha Q é disposta no tabuleiro, ela domina a linha, a coluna, e as diagonais que passam pela sua posição. [Vide Figura ~\ref{fig:1rainha}] O objetivo do problema é descobrir a disposição da menor quantidade de rainhas possível de forma à dominar todo o tabuleiro.
+O problema de dominação de rainhas é muito bem conhecido dentre os problemas de xadrez. Nele, dado um tabuleiro \textit{n $\times$ n}, temos $n$ quadrados dispostos nas linhas e $n$ quadrados nas colunas. Quando uma rainha Q é disposta no tabuleiro, ela domina a linha, a coluna, e as diagonais que passam pela sua posição. [Vide Figura~\ref{fig:1rainha}] O objetivo do problema é descobrir a disposição da menor quantidade de rainhas possível de forma à dominar todo o tabuleiro.
 
  Algoritmos evolucionários provaram ter sucesso para resolver e otimizar uma grande variedade de problemas complexos, incluindo problemas combinatórios, como o estudado aqui, em um tempo computacional razoavelmente aceitável.~\cite{doerr2011evolutionary}
 
@@ -246,7 +245,7 @@ O problema de dominação de rainhas é muito bem conhecido dentre os problemas 
 
 Um dos problemas da Busca Local é que ela pode ficar presa em um mínimo local, sem conseguir melhorar seu resultado. Para contornar esse problema, utiliza-se \textit{Iterative Local Search}, ou Busca Local Iterativa. Essa modificação consiste em iterar sobre chamadas da busca local, cada vez começando de um ponto diferente do conjunto de solução perturbando o mínimo local atual de modo que faça a solução chegar em outro ótimo local. Esta perturbação não pode ser muito forte nem muito fraca, pois corre o risco dela acabar encontrando o mesmo mínimo local ou servir como uma inicialização aleatória.~\cite{lourencco2010iterated}
 
-  Neste artigo, propomos uma solução baseada em \textit{Iterative Local Search} para o Problema de Dominação de Rainhas. Nossos resultados serão comparados diretamente com o método descrito em~\cite{alharbi2017genetic}, que utiliza Algoritmo Genético e é o mais comumente encontrado para solucionar este problema. Depois disso, iremos debater os resultados alcançados.
+  Neste trabalho, propomos uma solução baseada em \textit{Iterative Local Search} para o Problema de Dominação de Rainhas. Nossos resultados serão comparados com o método descrito em~\cite{alharbi2017genetic}, que utiliza Algoritmo Genético e é o mais comumente encontrado para solucionar este problema. Depois disso, iremos debater os resultados alcançados.
 
   \begin{figure}
     \centering
@@ -264,7 +263,7 @@ Um dos problemas da Busca Local é que ela pode ficar presa em um mínimo local,
 Decidimos escolher o \textit{Dominating Set of Queens Problem} por ter sido um dos temas abordados por um dos membros do grupo durante as apresentações de trabalho da disciplina, o que nos deu um certo grau de familiaridade com o assunto. Pesquisando mais à fundo, vimos que as soluções mais comuns para a solução do Problema de Dominação de Rainhas eram com \textit{Backtracking} e Algoritmo Genético. Além disso, de acordo com~\cite{alharbi2017genetic}, existem muitos artigos procurando os limites superior e inferior do problema, mas não existe muito esforço de pesquisa
 na busca de soluções práticas para o problema.
 
-Visto essa situação, decidimos propor uma solução baseada em \textit{Iterative Local Search} para o problema e comparar os resultados com uma solução em Algoritmo Guloso.
+Visto essa situação, decidimos propor uma solução baseada em \textit{Iterative Local Search} para o problema e comparar os resultados com uma solução em Algoritmo Genético.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trabalhos Relacionados}
@@ -277,9 +276,9 @@ Visto essa situação, decidimos propor uma solução baseada em \textit{Iterati
   \label{fig:2rainha}
 \end{figure}
 
-Um problema semelhante, proposto em 1850, conhecido como problema das n-rainhas teve muitos esforços focados nele para sua solução. O problema das n-rainhas é descrito como: dado um tabuleiro \textit{n $\times$ n}, qual seria a disposição das rainhas de modo que nenhuma rainha consiga atacar a outra. Houve muita pesquisa em torno deste problema, e suas soluções utilizam desde teoria matemática até teoria dos grafos. O estudo desse tipo de problema pode beneficiar várias áreas como controle de tráfego, prevenção de \textit{deadlocks} e armazenamento de memória paralela.~\cite{bell2009survey}
+Um problema semelhante, proposto em 1850, conhecido como problema das $n$-rainhas teve muitos esforços focados nele para sua solução. O problema das $n$-rainhas é descrito como: dado um tabuleiro \textit{n $\times$ n}, qual seria a disposição das rainhas de modo que nenhuma rainha consiga atacar a outra. Houve muita pesquisa em torno deste problema, e suas soluções utilizam desde teoria matemática até teoria dos grafos. O estudo desse tipo de problema pode beneficiar várias áreas como controle de tráfego, prevenção de \textit{deadlocks} e armazenamento de memória paralela.~\cite{bell2009survey}
 
-Muitas soluções para o problema das n rainhas foram propostas, dentre elas backtracking, redes neurais e algoritmos evolucionários.
+Muitas soluções para o problema das $n$ rainhas foram propostas, dentre elas $backtracking$, redes neurais e algoritmos evolucionários.
 
 Em contrapartida, o problema de dominação de rainhas não recebeu tanta atenção dentre os pesquisadores das ciências da computação. Na realidade, várias pesquisas se preocuparam em pesquisar o problema porém só adotaram modelos matemáticos.~\cite{alharbi2017genetic} Burger e Mynhart apontaram que o problema de dominação das rainhas é um dos mais difíceis problemas de xadrez.~\cite{art43}
 Esse problema é comumente definido como achar o menor número possível de rainhas em um tabuleiro \textit{n $\times$ n} que consigam a dominação total do tabuleiro. Esse número é conhecido como número de dominação e sua notação é $\gamma(\textbf{Qn})$.
@@ -301,11 +300,11 @@ Muitos pesquisadores focaram em descobrir os limites superior e inferior do prob
 
 Para este problema ser usado num computador tivemos que fazer as seguintes coisas. 
 
-Cada casa do tabuleiro é representada por uma tupla $(x,y)$ onde obviamente $x$ é o eixo \textit{x} e $y$ é o eixo \textit{y}, onde $x$ e $y$ podem ser um número de 0 até $n$ - 1, onde o tamanho total do tabuleiro é representado por $n \times n$. Com isso cada rainha é representada por um $(x,y)$ que é sua posição no tabuleiro.
+Cada casa do tabuleiro é representada por uma tupla $(x,y)$ onde $x$ representa o eixo \textit{x} e $y$ representa o eixo \textit{y}. $x$ e $y$ podem ser um número de 0 até $n$ - 1, onde o tamanho total do tabuleiro é representado por $n \times n$. Com isso cada rainha é representada por uma tupla $(x,y)$ que é sua posição no tabuleiro.
 
-Para representar um indivíduo usaremos  um conjunto $Q$ de rainhas de modo que $Q=\{(x{_{1}},y{_{1}}), (x{_{2}},y{_{2}}), ..., (x{_{n}},y{_{n}})\}$ onde a tupla \textbf{$(x{_{1}},y{_{1}})$} representa a rainha de índice 1. 
+Para representar um indivíduo usaremos  um conjunto $Q$ de rainhas de modo que $Q=\{(x{_{1}},y{_{1}}), (x{_{2}},y{_{2}}), ..., (x{_{n}},y{_{n}})\}$, onde a tupla \textbf{$(x{_{1}},y{_{1}})$} representa a rainha de índice 1. 
 
-Cada rainha por sua vez possui um conjunto $D$ que representa todos as posições de dominação daquela rainha, onde $D{_{i}}=\{(x{_{1}},y{_{1}}), (x{_{2}},y{_{2}}), ..., (x{_{n}},y{_{n}})\}$ onde $D{_{i}}$ representa a rainha de $i$-ésima posição no indivíduo.
+Cada rainha por sua vez possui um conjunto $D$ que representa todas as posições de dominação daquela rainha, onde $D{_{i}}=\{(x{_{1}},y{_{1}}), (x{_{2}},y{_{2}}), ..., (x{_{n}},y{_{n}})\}$ tal que $D{_{i}}$ representa a rainha de $i$-ésima posição no indivíduo.
 
 Além disso, $D{_{total}}$ é representado por:
 
@@ -315,7 +314,7 @@ Além disso, $D{_{total}}$ é representado por:
 
 \subsection{Cálculo da Dominação}
 
-Para calcular a dominação de uma rainha nós separamos nas seguintes equações:
+Para calcular a dominação de uma rainha nós chegamos nas seguintes equações:
 
 \begin{equation}
   \sum_{i=0}^{n} \bigcup (x, i) \\
@@ -338,25 +337,25 @@ Para calcular a dominação de uma rainha nós separamos nas seguintes equaçõe
 
 As equações (2) e (3) representam a horizontal e vertical, respectivamente, (4) e (5) representam respectivamente as diagonais superiores esquerda e direita e (6) e (7) as diagonais inferiores esquerda e direita.
 
-E o $D$ de uma rainha é a união de todas essas equações para ela.
+O $D$ de uma rainha é a união de todas essas equações para ela.
 \section{Metodologia}
 
-A nossa metodologia foi utilizar um \textit{ILS} basico. Ele gera um início randômico, passa ele para o \textit{Local Search}, salva o indivíduo se o $fitness$ dele for o melhor. Em seguida ele pega esse ultimo indivíduo gerado pelo \textit{Local Search} e o modifica usando nossa função de \textit{Perturbação} para em seguida enviar esse novo indivíduo para o \textit{Local Search} fazendo um loop. Este exemplo pode ser visto no Pseudocódigo ~\ref{pseudoILS}.
+A nossa metodologia foi utilizar um \textit{ILS} básico. Ele gera um início randômico, passa ele para o \textit{Local Search} e salva o indivíduo se o $fitness$ dele for o melhor. Em seguida, pega-se esse ultimo indivíduo gerado pelo \textit{Local Search} e o modifica usando nossa função de perturbação para em seguida enviar esse novo indivíduo para o \textit{Local Search} fazendo um $loop$. Este exemplo pode ser visto no Pseudocódigo~\ref{pseudoILS}.
 
 \subsection{$Fitness$}
 
-Nosso $fitness$ é baseado no $fitness$ do $paper$ de algoritimo genético ~\cite{alharbi2017genetic}.
+Nosso $fitness$ é baseado no $fitness$ do $paper$ que propoe a solução do problema de Dominação de Rainhas por Algoritmo Genético~\cite{alharbi2017genetic}.
 
-Dado o conjunto $D{_{total}}$ que representa a dominação das rainhas, e $n$ representa a quantidade de casas em uma coordenada do tabuleiro temos que:
+Dado o conjunto $D{_{total}}$ que representa a dominação das rainhas e $n$ representa a quantidade de casas em uma coordenada do tabuleiro temos que:
 
 \begin{equation}
  fitness = \frac{\left | D{_{total}} \right |}{n^{2}}
 \end{equation}
 
-Temos as seguintes propriedades:
+Com isso, temos as seguintes propriedades:
 \begin{itemize}
 
-  \item Quanto maior o $fitness$, melhor o indivíduo.
+  \item Quanto maior o $fitness$, melhor o indivíduo;
   
   \item Se o $fitness$ for igual à 1, aquela solução é ótima.
   
@@ -364,7 +363,7 @@ Temos as seguintes propriedades:
 
 \subsection{Início Randômico}
 
-O \textit{Iterative Local Search} começa gerando um inicio randômico, onde ele bota $r$ rainhas no tabuleiro onde $r$ é uma argumento do programa. Porém existem duas restrições que a rainha deve cumprir para ser considerada válida, que são: 
+O \textit{Iterative Local Search} começa gerando um inicio randômico, onde são posicionadas $r$ rainhas no tabuleiro onde $r$ é um argumento inicial do programa. Porém existem duas restrições que a rainha deve cumprir para ser considerada válida, que são: 
 \begin{itemize}
 
   \item Duas rainhas não podem ocupar o mesmo quadrado;
@@ -374,16 +373,16 @@ O \textit{Iterative Local Search} começa gerando um inicio randômico, onde ele
 \end{itemize}
 
 \subsection{\textit{Local Search}}
-O \textit{Local Search} calcula a movimentação de cada rainha para cada direção com 1 de distância (direita, esquerda, cima, baixo e diagonais) [Vide Figura ~\ref{possiveisMovimentacoes}] Essa movimentação deve atendender as mesmas restrições do início randômico. Motivo desta implementação é o fato de cada possível movimentação virar uma matriz, e não um vetor, contendo todas as posições a um de distancia de cada rainha no tabuleiro. Embora usar um \textit{Local Search} com distâncias maiores gere resultados melhores, isso teria a consequência negativa de aumentar exponencialmente o tempo computacional da execução do algoritmo.
+O \textit{Local Search} calcula a movimentação de cada rainha para cada direção com 1 de distância (direita, esquerda, cima, baixo e diagonais) [Vide Figura~\ref{possiveisMovimentacoes}] Essa movimentação deve atender as mesmas restrições do início randômico. O motivo desta implementação é o fato de cada possível movimentação virar uma matriz, e não um vetor, contendo todas as posições a um de distância de cada rainha no tabuleiro. Embora usar um \textit{Local Search} com distâncias maiores gere resultados melhores, isso teria a consequência negativa de aumentar exponencialmente o tempo computacional da execução do algoritmo.
 
 \subsection{Perturbação}
-Para fazer a perturbação a gente realiza um número $p$ de pertubações, onde $p$ é um argumento inicial do programa. 
+Para fazer a perturbação realizamos um número $p$ de pertubações, onde $p$ é um argumento inicial do programa. 
 Para cada pertubação, escolhe-se uma rainha e realiza-se uma movimentação randômica de uma casa, caindo nas restrições citadas no início randômico.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.60\linewidth]{possiveisMovimentacoes.png}
-  \caption{Exemplo de possiveis movimentações de três rainhas no local search e na perturbação}
+  \caption{Exemplo de possiveis movimentações de três rainhas no \textit{Local Search} e da perturbação}
   \label{possiveisMovimentacoes}
 \end{figure}
 
@@ -423,7 +422,7 @@ Para cada pertubação, escolhe-se uma rainha e realiza-se uma movimentação ra
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resultados}
 
-Nossos testes foram rodados em uma máquina Intel Core i5-7400 com 8GB de RAM, usando o sistema operacional Windows 10. A linguagem de programação utilizada foi Python 3.7.0 32-bit.
+Nossos testes foram rodados em uma máquina Intel Core i5-7400 com 8GB de RAM, usando o sistema operacional Windows 10 64-bit. A linguagem de programação utilizada foi Python 3.7.0 32-bit.
 
 Para cada valor nas tabelas \ref{tabela2}, \ref{tabela3} e \ref{tabela4}, foram rodadas 1000 iterações.
 
@@ -433,15 +432,15 @@ Em nossos testes os valores de pertubação do \textit{Iterative Local Search} q
 
 As figuras \ref{gen}, \ref{ils5} e \ref{ils10} são exemplos das soluções que os programas encontraram em uma configuração de tabuleiro $18 \times 18$ com 9 rainhas.
 
-Para um valor de tabuleiro relativamente pequeno, $14 \times 14$, e 7 rainhas a média dos resultados entre $ILS$ com 10 pertubações e o Algoritmo Genético ficou igual, porém, no $ILS$ de 5 perturbações tivemos um $fitness$ igual e uma melhora de 15\% em relação aos outros. 
+Para um valor de tabuleiro relativamente pequeno, $14 \times 14$, e 7 rainhas a média dos resultados entre $ILS$ com 10 pertubações e o Algoritmo Genético ficou igual, porém, no $ILS$ de 5 perturbações tivemos um $fitness$ igual e uma melhora de 15\% do tempo de execução em relação aos outros métodos. 
 
-Quando a complexidade do problema começou a aumentar, o Algoritmo Genético começou a ter o tempo de execução cada vez mais lento. Com 8 rainhas, Os testes foram repetidos pelos pesquisadores por acreditar que era um erro, mas o tempo de execução se manteu parecido.
+Quando a complexidade do problema começou a aumentar, o Algoritmo Genético começou a ter o tempo de execução cada vez mais lento. Com 8 rainhas, os testes foram repetidos pelos pesquisadores por acreditar que era um erro, mas o tempo de execução se manteu no mesmo vão.
 
-O Algoritmo Genético novamente apresenta um desempenho igual em questão de fitness, mas foi quase quatro vezes mais lento para achar uma solução do que a solução baseada em $ILS$.
+O Algoritmo Genético novamente apresenta um desempenho igual em questão de $fitness$, mas foi quase quatro vezes mais lento para achar uma solução do que o algortimo baseado em $ILS$.
 
-Quando o tabuleiro ficou ainda maior, $18 \times 18$, com 9 rainhas, o ILS se comportou bem, aproximadamente dobrando seu tempo de execução com o resultado anterior e a solução de algoritmo genético mais que dobrou seu tempo de processamento.
+Quando o tabuleiro ficou ainda maior, $18 \times 18$, com 9 rainhas, o ILS se comportou bem, aproximadamente dobrando seu tempo de execução em relação ao resultado anterior e a solução de algoritmo genético mais que dobrou seu tempo de processamento.
 
-Com isso, parece que a solução do problema de dominação de rainhas é muito mais eficiente em coisas. 
+Com isso, parece que a solução do problema de dominação de rainhas é muito mais eficiente usando \textit{Iterative Local Search} do que utilizando a solução proposta anterior utilizando Algoritmo Genético.
 
   \begin{table*}[ht]
     \caption{Resultados conseguidos em um tabuleiro $14 \times 14$ com 7 rainhas.}
@@ -513,7 +512,11 @@ Com isso, parece que a solução do problema de dominação de rainhas é muito 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusão}
 
-Text...
+Nesse trabalho, propomos uma solução ao problema de Dominação de Rainhas utilizando \textit{Iterative Local Search} e o comparamos com uma solução baseada em uma apresentada anteriormente em~\cite{alharbi2017genetic}, que utiliza Algoritmo Genético.
+
+Chegamos a conclusão que a solução em $ILS$ se torna cada vez melhor à medida que o tabuleiro aumenta, sendo muito mais rápida e sem perdas significativas de $fitness$, o que a torna melhor para buscas de solução em tabuleiros particularmente grandes.
+
+Para próximos trabalhos, poderiamos variar os parâmetros do Algoritmo Genético, procurar formas de paralelizar o problema e testar com números ainda maiores de tabuleiro, para ter certeza que a melhora do \textit{Iterative Local Search} em relação ao Algoritmo Genético não tenha um comportamento senoidal.
 \bookmarksetup{startatroot}% 
 % ---
 
