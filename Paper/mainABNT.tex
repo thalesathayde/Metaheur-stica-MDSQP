@@ -95,8 +95,8 @@
 % ---
 
 % --- Informações de dados para CAPA e FOLHA DE ROSTO ---
-\titulo{Proposta de solução do Problema de Dominação de Rainhas Utilizando ILS}
-\tituloestrangeiro{Proposed solution to the Minimum Dominating Set of Queens Problem using ILS}
+\titulo{Proposta de solução do Problema de Dominação de Rainhas Utilizando ILS e comparação com uma solução baseada em Algoritmo Genético}
+\tituloestrangeiro{Proposed solution to the Minimum Dominating Set of Queens Problem using ILS and comparation with a Genetic Algorithm based Solution}
 
 
 \autor{Maria Edoarda Vallim Fonseca \and Thales Athayde Santos}
@@ -194,7 +194,7 @@
 
 % resumo em português
 \begin{resumoumacoluna}
-Neste artigo, propomos uma solução para o Problema de Dominação de Rainhas usando Busca Iterativa Local e comparamos nossos resultados com uma solução prévia utilizando Algoritmo Genético.
+Neste artigo, propomos uma solução para o Problema de Dominação de Rainhas usando Busca Iterativa Local e comparamos nossos resultados com uma solução conhecida que utiliza Algoritmo Genético.
  
  \vspace{\onelineskip}
  
@@ -364,7 +364,14 @@ Temos as seguintes propriedades:
 
 \subsection{Início Randômico}
 
-O \textit{ILS} começa gerando um inicio randômico, onde ele bota $r$ rainhas no tabuleiro onde $r$ é uma argumento do programa. A única restrição deste inicio aléatorio é que duas rainhas não podem ocupar o mesmo quadrado e cada rainha deve estar dentro dos limites do tabuleiro.
+O \textit{Iterative Local Search} começa gerando um inicio randômico, onde ele bota $r$ rainhas no tabuleiro onde $r$ é uma argumento do programa. Porém existem duas restrições que a rainha deve cumprir para ser considerada válida, que são: 
+\begin{itemize}
+
+  \item Duas rainhas não podem ocupar o mesmo quadrado;
+ 
+  \item Cada rainha deve estar dentro dos limites do tabuleiro.
+
+\end{itemize}
 
 \subsection{\textit{Local Search}}
 O \textit{Local Search} calcula a movimentação de cada rainha para cada direção com 1 de distância (direita, esquerda, cima, baixo e diagonais) [Vide Figura ~\ref{possiveisMovimentacoes}] Essa movimentação deve atendender as mesmas restrições do início randômico. Motivo desta implementação é o fato de cada possível movimentação virar uma matriz, e não um vetor, contendo todas as posições a um de distancia de cada rainha no tabuleiro. Embora usar um \textit{Local Search} com distâncias maiores gere resultados melhores, isso teria a consequência negativa de aumentar exponencialmente o tempo computacional da execução do algoritmo.
@@ -418,6 +425,24 @@ Para cada pertubação, escolhe-se uma rainha e realiza-se uma movimentação ra
 
 Nossos testes foram rodados em uma máquina Intel Core i5-7400 com 8GB de RAM, usando o sistema operacional Windows 10. A linguagem de programação utilizada foi Python 3.7.0 32-bit.
 
+Para cada valor nas tabelas \ref{tabela2}, \ref{tabela3} e \ref{tabela4}, foram rodadas 1000 iterações.
+
+O Algoritmo Genético foi testado com uma população de 100 indivíduos, uma chance de mutação de 5\%, e, dado que a mutação ocorre, ela muda 2 bits do código genético do indivíduo.
+
+Em nossos testes os valores de pertubação do \textit{Iterative Local Search} que mais geraram bons resultados foi entre 5 e 10 pertubações. Aqui decidimos mostrar em nossos resultados tanto 5 quanto 10 pertubações para estudar se havia um ganho significativo de desempenho com esses dois valores.
+
+As figuras \ref{gen}, \ref{ils5} e \ref{ils10} são exemplos das soluções que os programas encontraram em uma configuração de tabuleiro $18 \times 18$ com 9 rainhas.
+
+Para um valor de tabuleiro relativamente pequeno, $14 \times 14$, e 7 rainhas a média dos resultados entre $ILS$ com 10 pertubações e o Algoritmo Genético ficou igual, porém, no $ILS$ de 5 perturbações tivemos um $fitness$ igual e uma melhora de 15\% em relação aos outros. 
+
+Quando a complexidade do problema começou a aumentar, o Algoritmo Genético começou a ter o tempo de execução cada vez mais lento. Com 8 rainhas, Os testes foram repetidos pelos pesquisadores por acreditar que era um erro, mas o tempo de execução se manteu parecido.
+
+O Algoritmo Genético novamente apresenta um desempenho igual em questão de fitness, mas foi quase quatro vezes mais lento para achar uma solução do que a solução baseada em $ILS$.
+
+Quando o tabuleiro ficou ainda maior, $18 \times 18$, com 9 rainhas, o ILS se comportou bem, aproximadamente dobrando seu tempo de execução com o resultado anterior e a solução de algoritmo genético mais que dobrou seu tempo de processamento.
+
+Com isso, parece que a solução do problema de dominação de rainhas é muito mais eficiente em coisas. 
+
   \begin{table*}[ht]
     \caption{Resultados conseguidos em um tabuleiro $14 \times 14$ com 7 rainhas.}
     \centering
@@ -462,6 +487,28 @@ Nossos testes foram rodados em uma máquina Intel Core i5-7400 com 8GB de RAM, u
   \end{tabular}
   \label{tabela4}
 \end{table*}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.30\linewidth]{gen10_18.png}
+  \caption{Output do programa: Solução proposta pelo Algoritmo Genético}
+  \label{gen}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.30\linewidth]{ils5_18.png}
+  \caption{Output do programa: Solução proposta pelo algoritmo \textit{Iterative Local Search} com 5 pertubações}
+  \label{ils5}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.30\linewidth]{ils10_18.png}
+  \caption{Output do programa: Solução proposta pelo algoritmo \textit{Iterative Local Search} com 10 pertubações}
+  \label{ils10}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusão}
