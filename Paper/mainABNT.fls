@@ -194,6 +194,7 @@ INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\ec-lmri10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\rm-lmr10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\lmmi10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\lmsy10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\ec-lmbx10.tfm
 INPUT C:\Users\Thales\AppData\Local\MiKTeX\2.9\pdftex\config\pdftex.map
 INPUT dom1rainha8x8.png
 INPUT .\dom1rainha8x8.png
@@ -205,33 +206,36 @@ INPUT .\dom2rainha8x8.png
 INPUT .\dom2rainha8x8.png
 INPUT .\dom2rainha8x8.png
 INPUT .\dom2rainha8x8.png
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\ec-lmbx10.tfm
-INPUT mainABNT.bbl
-INPUT mainABNT.bbl
-INPUT mainABNT.brf
-INPUT mainABNT.brf
-INPUT .\mainABNT.brf
-INPUT .\mainABNT.brf
-OUTPUT mainABNT.brf
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\ec-lmbxi10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\ec-lmss12.tfm
+INPUT possiveisMovimentacoes.png
+INPUT .\possiveisMovimentacoes.png
+INPUT .\possiveisMovimentacoes.png
+INPUT .\possiveisMovimentacoes.png
+INPUT .\possiveisMovimentacoes.png
 INPUT mainABNT.aux
-INPUT .\mainABNT.brf
-INPUT .\mainABNT.brf
-INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-rm.enc
-INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-mathit.enc
-INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-ec.enc
+INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-mathit.enc
+INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-rm.enc
+INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx9.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx9.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbxi10.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbxi10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmmi10.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmmi8.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmmi8.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr12.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr12.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr17.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr17.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr8.pfb
+INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr8.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr9.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr9.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmri10.pfb

@@ -280,7 +280,7 @@ Um problema semelhante, proposto em 1850, conhecido como problema das n-rainhas 
 
 Muitas soluções para o problema das n rainhas foram propostas, dentre elas backtracking, redes neurais e algoritmos evolucionários.
 
-Em contrapartida, o problema de dominação de rainhas não recebeu tanta atenção dentre os pesquisadores das ciências da computação. Na realidade, várias pesquisas sse preocuparam em pesquisar o problema porém só adotaram modelos matemáticos.~\cite{alharbi2017genetic} Burger e Mynhart apontaram que o problema de dominação das rainhas é um dos mais difíceis problemas de xadrez.~\cite{art43}
+Em contrapartida, o problema de dominação de rainhas não recebeu tanta atenção dentre os pesquisadores das ciências da computação. Na realidade, várias pesquisas se preocuparam em pesquisar o problema porém só adotaram modelos matemáticos.~\cite{alharbi2017genetic} Burger e Mynhart apontaram que o problema de dominação das rainhas é um dos mais difíceis problemas de xadrez.~\cite{art43}
 Esse problema é comumente definido como achar o menor número possível de rainhas em um tabuleiro \textit{n $\times$ n} que consigam a dominação total do tabuleiro. Esse número é conhecido como número de dominação e sua notação é $\gamma(\textbf{Qn})$.
 Muitos pesquisadores focaram em descobrir os limites superior e inferior do problema desde a década de 70,  e o número mínimo possível de rainhas para solucionar o problema ($\gamma(\textbf{Qn})$) foi calculado para diversos tamanhos de tabuleiro (vide tabela~\ref{tabela1})~\cite{art3,art43,art44,art45}.
 
@@ -296,9 +296,34 @@ Muitos pesquisadores focaram em descobrir os limites superior e inferior do prob
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{Formulação do Problema}
+
+Para este problema ser usado num computador tivemos que fazer as seguintes coisas. 
+
+Cada casa do tabuleiro é representada por uma tupla $(x,y)$ onde obviamente $x$ é o eixo \textit{x} e $y$ é o eixo \textit{y}. Com isso cada rainha é representada por um $(x,y)$ que é sua posição no tabuleiro.
+
+Para representar um individuo a gente usa um conjunto \textbf{Q={(x{_{1}},y{_{1}}),(x{_{2}},y{_{2}}),..,(x{_{n}},y{_{n}})}} onde a tupla \textbf{(x{_{1}},y{_{1}})} representa a rainha de indece 1.
+
 \section{Methodology}
 
-O \textit{Local Search} foi implementado com 1 de distância pela nossa implementação estar utilizando uma matriz e não um vetor contendo todas as posições do tabuleiro. Embora usar um \textit{Local Search} com distâncias maiores gere resultados melhores, isso teria a consequência negativa de aumentar exponencialmente o tempo computacional da execução do algoritmo.
+A nossa metodologia foi utilisar um \textit{ILS} basico. Ele gera um início randômico, passa ele para o \textit{Local Search}, salva o individuo se o fitness dele for o melhor. Em seguida ele pega esse ultimo individuo gerado pelo \textit{Local Search} e o modifica usando nossa função de \textit{Perturbação} para em seguida enviar esse novo individuo para o \textit{Local Search} fazendo um loop. Este exemplo pode ser visto no Pseudocódigo ~\ref{pseudoILS}.
+
+\subsection{Fitness}
+
+Nosso fitness é baseado no fitness do paper de algoritimo genérico ~\cite{alharbi2017genetic}.
+
+Dado o conjunto D
+
+O \textit{ILS} começa gerando um inicio randômico, onde ele bota x rainhas no tabuleiro onde x é uma variável do programa. A única restrição deste inicio aléatorio é que duas rainhas não podem ocupar o mesmo quadrado.
+
+Após isso, o inicio randômico é mandado para o \textit{Local Search} que foi implementado vendo a movimentação de cada rainha para cada direção com 1 de distância (direita, esquerda, cima, baixo e diagonais) ~\ref{possiveisMovimentacoes}. Motivo desta implementação é o fato de cada possível movimentação virar uma matriz, e não um vetor, contendo todas as posições a um de distancia de cada rainha no tabuleiro. Embora usar um \textit{Local Search} com distâncias maiores gere resultados melhores, isso teria a consequência negativa de aumentar exponencialmente o tempo computacional da execução do algoritmo.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.60\linewidth]{possiveisMovimentacoes.png}
+  \caption{Exemplo de possiveis movimentações de três rainhas no local search e na perturbação}
+  \label{possiveisMovimentacoes}
+\end{figure}
 
 Pseudocódigo do ILS
 \begin{algorithm}
@@ -314,7 +339,7 @@ Pseudocódigo do ILS
      $best \gets rainhas$\;
    }
   }
-
+  \label{pseudoILS}
   \caption{Pseudocódigo do algoritmo de ILS utilizado}
  \end{algorithm}
 

@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex mainABNT"] 1544322163 "mainABNT.aux" "mainABNT.bbl" "mainABNT" 1544322234
+["bibtex mainABNT"] 0 "mainABNT.aux" "mainABNT.bbl" "mainABNT" 0
   "C:/Users/Thales/AppData/Roaming/MiKTeX/2.9/bibtex/bib/abntex2/abntex2-options.bib" 1543103229 5396 4eb260dac60f150ae608d45252853090 ""
   "C:/Users/Thales/AppData/Roaming/MiKTeX/2.9/bibtex/bst/abntex2/abntex2-alf.bst" 1543103230 60064 0819ac8568f9a482510a46e3a8a6f605 ""
   "bibliography.bib" 1544305153 2930 132cce3a34ddec969dd54d45b8bf4460 ""
-  "mainABNT.aux" 1544322233 7074 3a5156408cf2832db9c92f0cec982bdd ""
+  "mainABNT.aux" 0 -1 0 ""
   (generated)
-  "mainABNT.bbl"
   "mainABNT.blg"
-["makeindex mainABNT.idx"] 1544322021 "mainABNT.idx" "mainABNT.ind" "mainABNT" 1544322234
-  "mainABNT.idx" 1544322232 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "mainABNT.bbl"
+["makeindex mainABNT.idx"] 0 "mainABNT.idx" "mainABNT.ind" "mainABNT" 0
+  "mainABNT.idx" 0 -1 0 ""
   (generated)
   "mainABNT.ind"
   "mainABNT.ilg"
-["pdflatex"] 1544322230 "c:/Users/Thales/Desktop/Pesquisa Operacional/2018 2/Final/Paper/mainABNT.tex" "mainABNT.pdf" "mainABNT" 1544322234
+["pdflatex"] 1544327391 "c:/Users/Thales/Desktop/Pesquisa Operacional/2018 2/Final/Paper/mainABNT.tex" "mainABNT.pdf" "mainABNT" 1544327391
   "C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc" 1254942240 2375 baa924870cfb487815765f9094cf3728 ""
   "C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc" 1254942240 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc" 1254942240 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -22,6 +22,7 @@
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr9.tfm" 1136765053 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx10.tfm" 1254942240 12076 b54175e02101bea1addf6b2d0197ed12 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx9.tfm" 1254942240 12080 8da3d5e88196e4de175949ad7749b42f ""
+  "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbxi10.tfm" 1254942240 17180 a5723008921cdcb0c5f4ebe997919b73 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr10.tfm" 1254942240 12056 7e13df7fe4cbce21b072ba7c4f4deb6e ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr12.tfm" 1254942240 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmr17.tfm" 1254942240 12156 ca1ae6a3c8564e89597f1f993fba1608 ""
@@ -44,10 +45,13 @@
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr8.tfm" 1254942240 11864 309fd7f43e4a0ba39f6f7644d76e8edf ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb" 1254942240 121021 836464b5fe0c782d94085eb083550ccc ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx9.pfb" 1254942240 126646 56e3d11e90816073e07cc59bd07ef384 ""
+  "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb" 1254942240 112766 6259d69aa3d87a505f375e49d8f6bf3a ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb" 1254942240 30388 702fae6a5f0e6e9c48a1d872b442ffcf ""
+  "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb" 1254942240 30635 833ec815d446ec453a4913fc26d24cbc ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb" 1254942240 119235 05e5c8d6d60439433e50047898c2c0e0 ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb" 1254942240 113634 9384aebdf26f9881e046a4b5574566db ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb" 1254942240 119752 1bd8d06e4079df624bf59ce3ad7c9aa6 ""
+  "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb" 1254942240 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb" 1254942240 121065 ba8daf2228d9e511988917831f1e22e9 ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb" 1254942240 112593 fda2373ba4420af33949610de4c28fe8 ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb" 1254942240 109265 e6c7d377db6dfccd4a123fb26da8cffb ""
@@ -129,17 +133,16 @@
   "C:/Users/Thales/AppData/Roaming/MiKTeX/2.9/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Thales/AppData/Roaming/MiKTeX/2.9/tex/plain/ifetex/ifetex.tex" 1522521775 1178 13842cd1b714a921af7920503db5625a ""
   "algorithm2e.sty" 1544305153 170447 d91cee26d3ef5727644d2110445741dd ""
-  "c:/Users/Thales/Desktop/Pesquisa Operacional/2018 2/Final/Paper/mainABNT.tex" 1544322228 15958 eda165b6bdd19062d70532a31119c2d7 ""
+  "c:/Users/Thales/Desktop/Pesquisa Operacional/2018 2/Final/Paper/mainABNT.tex" 1544327384 17875 441c1810c3cab035f020ea9043ad3a6b ""
   "dom1rainha8x8.png" 1544305153 12907 8fa4821ce0bbcae1115cdad6d074a535 ""
   "dom2rainha8x8.png" 1544305153 20875 30b71de69e0d11c80b5ad228134f2e9d ""
-  "mainABNT.aux" 1544322233 7074 3a5156408cf2832db9c92f0cec982bdd ""
-  "mainABNT.bbl" 1544322163 2646 93880a57afa342e36f70481d71dfa18f "bibtex mainABNT"
-  "mainABNT.brf" 1544322233 634 35540aba8ce4cd1a4098c2a619631c74 ""
-  "mainABNT.ind" 1544322021 0 d41d8cd98f00b204e9800998ecf8427e "makeindex mainABNT.idx"
-  "mainABNT.tex" 1544322228 15958 eda165b6bdd19062d70532a31119c2d7 ""
+  "mainABNT.aux" 1544327391 9 a94a2480d3289e625eea47cd1b285758 ""
+  "mainABNT.bbl" 0 -1 0 "bibtex mainABNT"
+  "mainABNT.ind" 0 -1 0 "makeindex mainABNT.idx"
+  "mainABNT.tex" 1544327384 17875 441c1810c3cab035f020ea9043ad3a6b ""
+  "possiveisMovimentacoes.png" 1544324457 15638 5b5265bf358f9cfa0d339e52aa0ae542 ""
   (generated)
-  "mainABNT.aux"
-  "mainABNT.idx"
   "mainABNT.pdf"
-  "mainABNT.brf"
   "mainABNT.log"
+  "mainABNT.idx"
+  "mainABNT.aux"
