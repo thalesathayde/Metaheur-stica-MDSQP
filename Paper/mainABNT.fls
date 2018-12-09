@@ -206,7 +206,6 @@ INPUT .\dom2rainha8x8.png
 INPUT .\dom2rainha8x8.png
 INPUT .\dom2rainha8x8.png
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\ec-lmbx10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\lm\ec-lmr8.tfm
 INPUT mainABNT.bbl
 INPUT mainABNT.bbl
 INPUT mainABNT.brf
@@ -217,10 +216,10 @@ OUTPUT mainABNT.brf
 INPUT mainABNT.aux
 INPUT .\mainABNT.brf
 INPUT .\mainABNT.brf
-INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-ec.enc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-rm.enc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-mathsy.enc
+INPUT C:\Program Files\MiKTeX 2.9\fonts\enc\dvips\lm\lm-ec.enc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmbx9.pfb
@@ -233,8 +232,6 @@ INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr12.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr12.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr17.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr17.pfb
-INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr8.pfb
-INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr8.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr9.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmr9.pfb
 INPUT C:\Program Files\MiKTeX 2.9\fonts\type1\public\lm\lmri10.pfb

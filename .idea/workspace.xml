@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e583042-8f1b-469e-a76f-a40fe4c41af5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Paper/main.aux" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Paper/main.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Paper/main.out" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Paper/mainABNT.pdf" afterPath="$PROJECT_DIR$/Paper/mainABNT.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Paper/mainABNT.synctex.gz" afterPath="$PROJECT_DIR$/Paper/mainABNT.synctex.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ILS.py" afterPath="$PROJECT_DIR$/ILS.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Paper/mainABNT.aux" afterPath="$PROJECT_DIR$/Paper/mainABNT.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Paper/mainABNT.bbl" afterPath="$PROJECT_DIR$/Paper/mainABNT.bbl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Paper/mainABNT.brf" afterPath="$PROJECT_DIR$/Paper/mainABNT.brf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Paper/mainABNT.fdb_latexmk" afterPath="$PROJECT_DIR$/Paper/mainABNT.fdb_latexmk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Paper/mainABNT.fls" afterPath="$PROJECT_DIR$/Paper/mainABNT.fls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Paper/mainABNT.ilg" afterPath="$PROJECT_DIR$/Paper/mainABNT.ilg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Paper/mainABNT.log" afterPath="$PROJECT_DIR$/Paper/mainABNT.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Paper/mainABNT.tex" afterPath="$PROJECT_DIR$/Paper/mainABNT.tex" />
-    </list>
+    <list default="true" id="1e583042-8f1b-469e-a76f-a40fe4c41af5" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="genetico.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="genetico.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/genetico.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="300" column="29" lean-forward="false" selection-start-line="300" selection-start-column="29" selection-end-line="300" selection-end-column="29" />
+            <state relative-caret-position="106">
+              <caret line="197" column="17" lean-forward="false" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="17" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -50,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ILS.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ILS.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ILS.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="109">
-              <caret line="328" column="13" lean-forward="true" selection-start-line="328" selection-start-column="13" selection-end-line="328" selection-end-column="13" />
+              <caret line="328" column="13" lean-forward="false" selection-start-line="328" selection-start-column="13" selection-end-line="328" selection-end-column="13" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -90,6 +74,7 @@
       <find>random</find>
       <find>index</find>
       <find>asdashdahdhashdhasdhas</find>
+      <find>naturalSelect</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -419,20 +404,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/genetico.py">
+    <entry file="file://$PROJECT_DIR$/ILS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="300" column="29" lean-forward="false" selection-start-line="300" selection-start-column="29" selection-end-line="300" selection-end-column="29" />
+        <state relative-caret-position="109">
+          <caret line="328" column="13" lean-forward="false" selection-start-line="328" selection-start-column="13" selection-end-line="328" selection-end-column="13" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ILS.py">
+    <entry file="file://$PROJECT_DIR$/genetico.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="328" column="13" lean-forward="true" selection-start-line="328" selection-start-column="13" selection-end-line="328" selection-end-column="13" />
+        <state relative-caret-position="106">
+          <caret line="197" column="17" lean-forward="false" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="17" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

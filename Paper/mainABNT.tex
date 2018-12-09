@@ -303,7 +303,7 @@ O \textit{Local Search} foi implementado com 1 de distância pela nossa implemen
 Pseudocódigo do ILS
 \begin{algorithm}
   \KwData{rainhas, best, maxIterações}
-  \KwResult{best - melhor solução }
+  \KwResult{best - Melhor solução }
   $rainhas \gets randomStart(rainhas)$\;
   $rainhas \gets Local Search(rainhas)$\;
   $best \gets rainhas$\;
@@ -314,26 +314,20 @@ Pseudocódigo do ILS
      $best \gets rainhas$\;
    }
   }
-  
+
   \caption{Pseudocódigo do algoritmo de ILS utilizado}
  \end{algorithm}
 
  \begin{algorithm}
-  \KwData{rainhas, tabuleiro}
-  \KwResult{how to write algorithm with \LaTeX2e }
-  initialization\;
-  listaMovimentos = [0..7]\;
-  melhorResultado\;
-  \While{rainhas}{
-  
-   embaralha(rainhas)\;
-   \eIf{understand}{
-    go to next section\;
-    current section becomes this one\;
-    }{
-    go back to the beginning of current section\;
-   }
+  \KwData{population, best}
+  \KwResult{best - Melhor fitness na população}
+  $population \gets randomStart()$\;
+  $populationFitness \gets fitness(population)$\;
+  \Repeat{$maxIterações$ OU $\exists populationFitness=1$}{
+   $population \gets algoritmoGenetico(population)$\;
+   $populationFitness \gets fitness(population)$\;
   }
+  $best \gets bestIn(population, populationFitness)$\;
   \caption{Pseudocódigo do Algoritmo Genético utilizado}
  \end{algorithm}
  
