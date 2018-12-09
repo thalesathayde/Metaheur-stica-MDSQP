@@ -327,11 +327,11 @@ count=1
 for i in range(maxIterations):
     if fitness(totalDaDominacao(best,tabuleiro),tabuleiro) == 1:
         break
-    oldBest=deepcopy(best)
+    #oldBest=deepcopy(best)
     rainhas=perturbation(rainhas,perturbationTimes,tabuleiro)
     rainhas=localSearch(rainhas,tabuleiro)
     count+=1
-    if fitness(totalDaDominacao(rainhas,tabuleiro),tabuleiro)>fitness(totalDaDominacao(oldBest,tabuleiro),tabuleiro):
+    if fitness(totalDaDominacao(rainhas,tabuleiro),tabuleiro)>fitness(totalDaDominacao(best,tabuleiro),tabuleiro):
         best = deepcopy(rainhas)
 
 print("iterações: "+str(count))
